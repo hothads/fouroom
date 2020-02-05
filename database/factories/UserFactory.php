@@ -3,6 +3,8 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\User;
+use App\Thread;
+use App\Reply;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -25,4 +27,22 @@ $factory->define(User::class, function (Faker $faker) {
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
     ];
+});
+
+
+$factory->define(Thread::class, function (Faker $faker){
+	return [
+		'user_id'=> factory(User::class),
+		'title' =>$faker->sentence,
+		'body' =>$faker->paragraph
+	];
+});
+
+
+$factory->define(Reply::class, function (Faker $faker){
+	return [
+		'user_id'=> factory(User::class),
+		'thread_id'=>factory(Thread::class),
+		'body' =>$faker->paragraph
+	];
 });
