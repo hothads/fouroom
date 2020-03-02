@@ -6,6 +6,9 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
+use App\Thread;
+use App\Reply;
+
 class ThreadsTest extends TestCase
 {
 
@@ -13,11 +16,34 @@ class ThreadsTest extends TestCase
 
 
     /** @test */
-    public function a_user_can_browse_threads()
+    public function a_user_can_browse_all_threads()
     {
         
-        $response = $this->get('/threads');
+        $thread = factory(Thread::class)->create();
 
-        $response->assertStatus(200);
+        $response = $this->get('/threads')
+        	->assertSee($thread->title);
     }
+
+    
+    /** @test */ 
+    public function a_user_can_browse_a_single_thread()
+    {
+        
+        $thread = factory(Thread::class)->create();
+
+        $response = $this->get('/threads/'.$thread->id)
+        	->assertSee($thread->title);
+    }
+
+    /** @test */ 
+    public function a_user_can_read_replies_that_are_associated_with_a_thread()
+    {
+        $thread = factory(Thread::class)->create();
+        $reply = factory(Reply::class)->create(['thread_id'=>$thread->id]); 
+
+        $this->get($thread->path())
+        	->assertSee($reply->body);  	
+    }
+
 }

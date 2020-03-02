@@ -20,11 +20,8 @@
 
         @include('components.nav')
 
-
-
-    <div class="container mx-auto my-6 bg-white rounded border-2 border-gray-200">
         @yield('content')
-    </div>
+    
 </div>
 </body>
 </html>

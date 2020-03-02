@@ -11,11 +11,11 @@
         </div>
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             
-            <div class="lg:flex-grow">
-                {{-- <a href="/threads" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
-                    Threads
+            <div class="lg:flex-grow text-sm">
+                <a href="/threads" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
+                    All Threads
                 </a>
-
+{{-- 
                 <a href="/threads/replies" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
                     Replies
                 </a>
