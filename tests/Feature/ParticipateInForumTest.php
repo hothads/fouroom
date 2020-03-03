@@ -11,6 +11,13 @@ class ParticipateInForumTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
+    function unauth_users_may_not_add_replies()
+    {
+        $this->post('/threads/some-channel/1/replies',[])
+            ->assertRedirect('/login');
+    }
+
+    /** @test */
     public function an_auth_user_may_participate_in_forum_threads()
     {
         $this->withoutExceptionHandling();
@@ -21,7 +28,7 @@ class ParticipateInForumTest extends TestCase
 
         $thread = factory('App\Thread')->create();
 
-        $reply = factory('App\Reply')->create();
+        $reply = factory('App\Reply')->make();
 
         $this->post($thread->path().'/replies', $reply->toArray());
 

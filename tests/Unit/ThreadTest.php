@@ -9,13 +9,6 @@ class ThreadTest extends TestCase
 {
 	use RefreshDatabase;
 
-	/** @test */
-	function a_thread_has_replies()
-	{
-		$thread = factory('App\Thread')->create();
-		$this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $thread->replies);
-	}
-
 		/** @test */
 	function a_thread_has_a_creator()
 	{
@@ -24,6 +17,14 @@ class ThreadTest extends TestCase
 		$this->assertInstanceOf('App\User', $thread->creator);
 		
 	}
+
+		/** @test */
+	function a_thread_has_replies()
+	{
+		$thread = factory('App\Thread')->create();
+		$this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $thread->replies);
+	}
+
 
 
 		/** @test */
@@ -39,5 +40,23 @@ class ThreadTest extends TestCase
 		$this->assertCount(1, $thread->replies);
 		
 	}
+
+		/** @test */
+
+		function a_thread_belongs_to_a_chanel()
+		{
+			$thread = factory('App\Thread')->create();
+
+			$this->assertInstanceOf('App\Channel', $thread->channel);
+		}
+
+		/** @test */
+		function a_thread_can_make_a_string_path()
+		{
+			$thread = factory('App\Thread')->make();
+
+			$this->assertEquals('/threads/'.$thread->channel->slug.'/'.$thread->id, $thread->path());
+		}
+
 
 }
