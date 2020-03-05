@@ -12,17 +12,23 @@
         <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
             
             <div class="lg:flex-grow text-sm">
-                <a href="/threads" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
-                    All Threads
-                </a>
-{{-- 
-                <a href="/threads/replies" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
-                    Replies
-                </a>
+                <ul>
+                    <li class="block mt-4 lg:inline-block lg:mt-0 mr-4"><a href="/threads">All threads </a></li>
+                    @if(auth()->check())
+                    <li class="block mt-4 lg:inline-block lg:mt-0 mr-4"><a href="/threads?by={{auth()->user()->name}}">My threads </a></li>
+                    @endif
+                    <li class="block mt-4 lg:inline-block lg:mt-0 mr-4"><a href="/threads/create">New Thread</a></li>
+                    <li class="block mt-4 lg:inline-block lg:mt-0 mr-4"><a href="#">Channels</a></li>
 
-                <a href="/FAQ" class="block mt-4 lg:inline-block lg:mt-0 mr-4">
-                    FAQ
-                </a> --}}
+{{--                     <div class="mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+                       
+                        @foreach($channels as $channel)
+                            <a class="block px-4 py-2 text-gray-800 hover:bg-indigo-500 hover:text-white" href="/threads/{{ $channel->slug }}">{{$channel->slug}}</a>
+                        @endforeach
+
+                    </div> --}}
+
+                </ul>
             </div>
 
 
