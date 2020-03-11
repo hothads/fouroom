@@ -10,6 +10,15 @@ class Thread extends Model
 {
     protected $guarded = [];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::addGlobalScope('replyCount', function ($builder){
+            $builder->withCount('replies');
+        });
+    }
+
 	public function creator()
 	{
 		return $this->belongsTo(User::class, 'user_id');
@@ -29,6 +38,12 @@ class Thread extends Model
     {
     	return $this->hasMany(Reply::class);
     }
+
+    // replyCount to use this function
+    // public function getReplyCountAttribute()
+    // {
+    //     return $this->replies()->count();
+    // }
 
     public function addReply($reply)
     {

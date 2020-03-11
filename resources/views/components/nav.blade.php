@@ -18,6 +18,7 @@
                     <li class="block mt-4 lg:inline-block lg:mt-0 mr-4"><a href="/threads?by={{auth()->user()->name}}">My threads </a></li>
                     @endif
                     <li class="block mt-4 lg:inline-block lg:mt-0 mr-4"><a href="/threads/create">New Thread</a></li>
+                    <li class="block mt-4 lg:inline-block lg:mt-0 mr-4"><a href="/threads?popular=1">Popular</a></li>
                     <li class="block mt-4 lg:inline-block lg:mt-0 mr-4"><a href="#">Channels</a></li>
 
 {{--                     <div class="mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
