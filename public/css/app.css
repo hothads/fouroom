@@ -11557,6 +11557,21 @@ a {
   color: #4299e1;
 }
 
+.pagination {
+  display: -webkit-box;
+  display: flex;
+  margin-bottom: 1.5rem;
+  padding: 0;
+}
+
+.pagination li {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-width: 1px;
+  background-color: #fff;
+}
+
 @media (min-width: 640px) {
   .sm\:sr-only {
     position: absolute;

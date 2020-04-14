@@ -8,13 +8,13 @@
 		<div class="bg-white rounded border-2 border-gray-200 mb-6">
 			
 			<div class="bg-gray-200 px-5 py-3 text-lg">
-				<h2><a class="text-blue-700" href="">{{$thread->creator->name}}</a> said {{ $thread->title }}</h2>
+				<h2><a class="text-blue-700" href="/profiles/{{$thread->creator->name}}">{{$thread->creator->name}}</a> said {{ $thread->title }}</h2>
 			</div>
 
 			<div class="px-5 py-3"> 
 					
 				<article class="mb-2">
-					<div>{{ $thread->body }}</div>
+					<div>{!! $thread->body !!}</div>
 				</article>
 					
 			</div>

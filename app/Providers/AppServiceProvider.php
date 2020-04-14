@@ -28,16 +28,23 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
 
+        \View::composer('*', function($view){
+            // $channels = Channel::all();
+            $channels = \Cache::rememberForever('channels', function(){
+                return Channel::all();
+            });
+
+            $view->with('channels', $channels);
+        
+        });
+
+   
         // send variable to the choosen view
         // \View::composer('threads.create', function($view){
         //     $view->with('channels', \App\Channel::all());
         // });
 
-        //send variable to all views before the view is loaded
-        \View::composer('*', function($view){
-            $view->with('channels', \App\Channel::all());
-        });
-
+             
         //send variable to all views but after the view is loaded
         // \View::share('channels', Channel::all());
     }

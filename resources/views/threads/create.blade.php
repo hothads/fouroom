@@ -27,6 +27,7 @@
 			
 
 			<label class="mb-1" for="body">Body</label>
+
 			<textarea class="border border-gray-200 rounded mb-3" name="body">{{ old('body') }}</textarea>
 			<div class="text-left  mb-3">
 				<button class="bg-green-500 px-3 py-1 text-white rounded" type="submit">Save</button>

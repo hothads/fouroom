@@ -11,6 +11,8 @@ class Reply extends Model
 {
     protected $guarded = [];
 
+    protected $with = ['owner', 'favorites'];
+
 	public function owner() 
 	{
 		return $this->belongsTo(User::class, 'user_id');
@@ -28,7 +30,12 @@ class Reply extends Model
 
     public function isFavorited()
     {
-    	return $this->favorites()->where(['user_id'=>auth()->id()])->exists();
+    	return !! $this->favorites->where(['user_id'=>auth()->id()])->count();
+    }
+
+    public function getFavoritesCountAttributes()
+    {
+        return $this->favorites->count();
     }
 
 }

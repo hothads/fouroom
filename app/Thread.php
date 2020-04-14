@@ -10,6 +10,8 @@ class Thread extends Model
 {
     protected $guarded = [];
 
+    protected $with = ['creator', 'channel'];
+
     protected static function boot()
     {
         parent::boot();
@@ -38,12 +40,6 @@ class Thread extends Model
     {
     	return $this->hasMany(Reply::class);
     }
-
-    // replyCount to use this function
-    // public function getReplyCountAttribute()
-    // {
-    //     return $this->replies()->count();
-    // }
 
     public function addReply($reply)
     {

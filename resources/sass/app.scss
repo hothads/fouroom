@@ -7,3 +7,11 @@
 a {
 	@apply .text-blue-500;
 }
+
+.pagination {
+	@apply .flex .mb-6 .p-0 ;
+
+	li {
+		@apply .px-3 .pb-1 .border .bg-white; 
+	}
+}
