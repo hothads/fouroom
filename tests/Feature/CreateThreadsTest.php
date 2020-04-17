@@ -7,6 +7,7 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Thread;
 use App\User;
+use App\Reply;
 
 class CreateThreadsTest extends TestCase
 {
@@ -65,6 +66,37 @@ class CreateThreadsTest extends TestCase
             ->assertSessionHasErrors('channel_id');
     }
 
+
+    /** @test */
+    public function a_thread_can_be_deleted()
+    {
+        $user = $this->signIn();
+
+        $thread = factory(Thread::class)->create(['user_id' => $user->id]);
+        $reply = factory(Reply::class)->create(['thread_id' => $thread->id]);
+
+        $response = $this->json('DELETE', $thread->path());
+
+        $response->assertStatus(204);
+
+        $this->assertDatabaseMissing('threads', ['id' => $thread->id]);
+        $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
+    }
+
+
+    /** @test */
+    public function unautherized_users_may_not_delete_threads()
+    {
+        $thread = factory(Thread::class)->create();
+
+        $this->delete($thread->path())->assertRedirect('/login');
+
+        $this->signIn();
+
+        $this->delete($thread->path())->assertStatus(403);
+            
+    }
+    
 
     public function publishThread($overrides = [])
     {

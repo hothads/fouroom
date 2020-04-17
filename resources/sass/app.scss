@@ -5,7 +5,12 @@
 @tailwind utilities;
 
 a {
-	@apply .text-blue-500;
+	@apply .text-blue-500 .outline-none;
+
+	&:hover {
+		@apply .text-red-500;
+		transition: .4s ease-in-out;
+	}
 }
 
 .pagination {
@@ -13,5 +18,64 @@ a {
 
 	li {
 		@apply .px-3 .pb-1 .border .bg-white; 
+	}
+}
+
+
+//card
+.forum-card {
+	@apply .bg-white .rounded .border-2 .border-gray-200 .mb-6;
+}
+
+.forum-header {
+	@apply .bg-gray-200 .px-5 .py-3 .text-lg .flex .justify-between;
+
+
+	p {
+		@apply .text-sm;
+	}
+}
+
+.forum-body {
+	@apply .px-5 .py-3;
+
+	article {
+		@apply .mb-2;
+	}
+}
+
+//menu
+.topmenu {
+	@apply .list-none .m-0 .p-0 .flex;
+}
+
+.topmenu > li {
+	@apply .relative .px-4 .py-2;
+
+	&:hover .submenu {
+		@apply .visible .opacity-100;
+		transform: scale(1);
+	}
+}
+
+.topmenu a {
+	@apply .text-gray-700;
+}
+
+.submenu {
+	@apply .invisible .absolute .opacity-0 .border .border-gray-300 .z-10 .w-40 .text-center .-ml-20 .bg-white .rounded;
+	top:100%;
+	left:50%;
+	transform: scale(.8);
+	transition: .4s ease-in-out;
+
+	li {
+		@apply .px-4 .py-2 .bg-white;
+		transition: .4s linear;
+
+		&:hover {
+			@apply .bg-gray-200;
+			transition: .4s linear;
+		}
 	}
 }
