@@ -8,27 +8,34 @@ use App\User;
 
 class Thread extends Model
 {
+
+    use RecordsActivity;
+
     protected $guarded = [];
 
     protected $with = ['creator', 'channel'];
+
 
     protected static function boot()
     {
         parent::boot();
 
-        static::addGlobalScope('replyCount', function ($builder){
+        static::addGlobalScope('replyCount', function ($builder) {
             $builder->withCount('replies');
         });
 
-        static::deleting(function($thread){
+        static::deleting(function ($thread) {
             $thread->replies()->delete();
         });
+
+
     }
 
-	public function creator()
-	{
-		return $this->belongsTo(User::class, 'user_id');
-	}
+
+    public function creator()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 
     public function channel()
     {
@@ -42,7 +49,7 @@ class Thread extends Model
 
     public function replies()
     {
-    	return $this->hasMany(Reply::class);
+        return $this->hasMany(Reply::class);
     }
 
     public function addReply($reply)

@@ -9,11 +9,13 @@ use App\Favorite;
 
 class Reply extends Model
 {
+    use RecordsActivity, Favoritable;
+
     protected $guarded = [];
 
     protected $with = ['owner', 'favorites'];
 
-	public function owner() 
+	public function owner()
 	{
 		return $this->belongsTo(User::class, 'user_id');
 	}
@@ -26,16 +28,6 @@ class Reply extends Model
     public function favorites()
     {
     	return $this->morphMany(Favorite::class, 'favorited');
-    }
-
-    public function isFavorited()
-    {
-    	return !! $this->favorites->where(['user_id'=>auth()->id()])->count();
-    }
-
-    public function getFavoritesCountAttributes()
-    {
-        return $this->favorites->count();
     }
 
 }
