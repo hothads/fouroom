@@ -2,45 +2,26 @@
 
 @section('content')
 
-<div class="container max-w-4xl mx-auto">
-
-	<div class="border-b py-6 mb-6">
-	
-		<span class="text-2xl">{{ $user->name }}</span> 
-
-		{{ $user->created_at->diffForHumans() }} 
-
-	</div>
+    <div class="container max-w-4xl mx-auto mt-6">
 
 
-	@forelse($threads as $thread)
-			
-			<div class="forum-card">
-				
-				<div class="forum-header">
+        @forelse($activities as $date => $activity)
 
-					<h2><a href="{{ $thread->path() }}">{{ $thread->title }}</a></h2>
-					
-					<p>Создано {{$thread->created_at->diffForHumans()}}</p>
-				
-				</div>
+            <div class="border-b py-6 mb-6">
 
-				<div class="forum-body"> 
-						
-					<article>{!! $thread->body !!}</article>
-						
-				</div>
+                <span class="text-2xl">{{$date}}</span>
 
-			</div>
+            </div>
 
-	@empty
+            @foreach($activity as $record)
+                @include('profiles.activities.' . $record->type, ['activity'=>$record] )
+            @endforeach
+        @empty
 
-		no threads
-	
-	@endforelse
+            no threads
 
-	{{$threads->links()}}
+        @endforelse
 
-</div>
-	
+    </div>
+
 @endsection

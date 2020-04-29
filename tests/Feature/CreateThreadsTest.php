@@ -26,7 +26,7 @@ class CreateThreadsTest extends TestCase
     }
 
     /** @test */
-    function an_authenticated_user_can_create_new_forum_threads() 
+    function an_authenticated_user_can_create_new_forum_threads()
     {
         $this->withoutExceptionHandling();
 
@@ -81,6 +81,16 @@ class CreateThreadsTest extends TestCase
 
         $this->assertDatabaseMissing('threads', ['id' => $thread->id]);
         $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
+
+        $this->assertDatabaseMissing('activities', [
+            'subject_id' => $thread->id,
+            'subject_type' => get_class($thread)
+        ]);
+
+        $this->assertDatabaseMissing('activities', [
+            'subject_id' => $reply->id,
+            'subject_type' => get_class($reply)
+        ]);
     }
 
 
@@ -94,16 +104,16 @@ class CreateThreadsTest extends TestCase
         $this->signIn();
 
         $this->delete($thread->path())->assertStatus(403);
-            
+
     }
-    
+
 
     public function publishThread($overrides = [])
     {
         $this->signIn();
 
         $thread = factory(Thread::class)->make($overrides);
-        
+
         return $this->post('/threads', $thread->toArray());
     }
 

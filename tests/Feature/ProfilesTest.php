@@ -15,29 +15,29 @@ class ProfilesTest extends TestCase
     /** @test */
     public function a_user_has_a_profile()
     {
-        // $this->withoutExceptionHendling();
-
         $user = factory(User::class)->create();
 
+        $this->signIn($user);
+
         $this->get("/profiles/{$user->name}")
-            ->assertSee($user->name);            
+            ->assertSee($user->name);
     }
 
 
     /** @test */
     public function profiles_display_all_threads_with_assosiated_user()
     {
-        $user = factory(User::class)->create();
+        $this->signIn();
 
-        $thread = factory(Thread::class)->create(['user_id'=>$user->id]);
+        $thread = factory(Thread::class)->create(['user_id'=>auth()->id()]);
 
-        $this->get("/profiles/{$user->name}")
+        $this->get("/profiles/".auth()->user()->name)
             ->assertSee($thread->title);
 
-            
+
     }
-    
-    
+
+
 
 
 }
