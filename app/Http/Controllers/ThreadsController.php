@@ -66,7 +66,8 @@ class ThreadsController extends Controller
             'body'=>request('body')
         ]);
 
-        return redirect($thread->path());
+        return redirect($thread->path())
+                ->with('flash', 'Ваш пост опубликован!');
     }
 
     /**
@@ -126,7 +127,7 @@ class ThreadsController extends Controller
 
         return redirect('/threads');
 
-        
+
     }
 
     protected function getThreads(Channel $channel, ThreadFilters $filters)
