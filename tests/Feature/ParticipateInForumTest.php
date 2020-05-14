@@ -49,4 +49,62 @@ class ParticipateInForumTest extends TestCase
 
     }
 
+    /** @test */
+    function unauthenticated_user_may_not_delete_replies() {
+
+        $reply = factory('App\Reply')->create();
+
+        $this->delete("/replies/{$reply->id}")
+            ->assertRedirect('login');
+
+        $this->signIn();
+
+        $this->delete("/replies/{$reply->id}")->assertStatus(403);
+
+    }
+
+    /** @test */
+
+    function auth_user_can_delete_replies() {
+
+        $this->signIn();
+
+        $reply = factory('App\Reply')->create(['user_id' => auth()->id()]);
+
+        $this->delete("/replies/{$reply->id}")->assertStatus(302);
+
+        $this->assertDatabaseMissing('replies', ['id' => $reply->id]);
+
+    }
+
+    /** @test */
+
+    function authorized_users_can_update_replies() {
+
+        $this->signIn();
+
+        $reply = factory('App\Reply')->create(['user_id' => auth()->id()]);
+
+        $new_reply = 'new message';
+
+        $this->patch("/replies/{$reply->id}", ['body' => $new_reply]);
+
+        $this->assertDatabaseHas('replies', ['id' => $reply->id, 'body' => $new_reply]);
+
+    }
+
+    /** @test */
+    function unauthenticated_user_may_not_update_replies() {
+
+        $reply = factory('App\Reply')->create();
+
+        $this->patch("/replies/{$reply->id}")
+            ->assertRedirect('login');
+
+        $this->signIn();
+
+        $this->patch("/replies/{$reply->id}")->assertStatus(403);
+
+
+    }
 }

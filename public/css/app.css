@@ -13982,6 +13982,10 @@ video {
   transition-duration: 1000ms;
 }
 
+v-cloak {
+  display: none;
+}
+
 a {
   color: #4299e1;
   outline: 0;

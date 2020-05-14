@@ -4,6 +4,10 @@
 
 @tailwind utilities;
 
+v-cloak {
+    display:none;
+}
+
 a {
 	@apply .text-blue-500 .outline-none;
 
@@ -17,7 +21,7 @@ a {
 	@apply .flex .mb-6 .p-0 ;
 
 	li {
-		@apply .px-3 .pb-1 .border .bg-white; 
+		@apply .px-3 .pb-1 .border .bg-white;
 	}
 }
 

@@ -14,7 +14,7 @@ class FavoritesTest extends TestCase
     /** @test */
     public function guest_can_not_favorite()
     {
-        $this->post('replies/1/favorites')->assertRedirect('login');    
+        $this->post('replies/1/favorites')->assertRedirect('login');
     }
 
 
@@ -32,6 +32,23 @@ class FavoritesTest extends TestCase
             $this->post('replies/'. $reply->id . '/favorites');
 
             $this->assertCount(1, $reply->favorites);
+    }
+
+    /** @test */
+    public function an_auth_user_can_unfavorite_any_reply()
+    {
+
+        $this->withoutExceptionHandling();
+
+        $this->signIn();
+
+        $reply = factory('App\Reply')->create();
+
+        $reply->favorite();
+
+        $reply->unfavorite();
+
+        $this->assertCount(0, $reply->favorites);
     }
 
 
@@ -54,9 +71,9 @@ class FavoritesTest extends TestCase
 
             $this->assertCount(1, $reply->favorites);
     }
-    
-    
-    
-        
-    
+
+
+
+
+
 }

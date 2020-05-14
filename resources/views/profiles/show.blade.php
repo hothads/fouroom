@@ -18,7 +18,7 @@
             @endforeach
         @empty
 
-            no threads
+            <p>Пользователь не совершал никаких действий на форуме</p>
 
         @endforelse
 

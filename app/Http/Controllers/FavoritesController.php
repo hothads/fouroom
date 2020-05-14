@@ -14,11 +14,10 @@ class FavoritesController extends Controller
 	}
 
     public function store(Reply $reply){
-    	if (!$reply->favorites()->where(['user_id'=>auth()->id()])->exists())
-    	{
-    		$reply->favorites()->create(['user_id' => auth()->id()]);
-    	}
+        $reply->favorite();
+    }
 
-    	return back();
+    public function destroy(Reply $reply){
+	    $reply->unfavorite();
     }
 }
