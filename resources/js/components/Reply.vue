@@ -4,7 +4,7 @@
         <div class="forum-header">
             <h2>
                 <a :href="'/profiles/' + data.owner.name" v-text="data.owner.name"></a>
-                said {{ data.created_at }}...
+                said <span v-text="ago"></span>
             </h2>
             <div v-if="signedIn">
                 <favorite :reply="data"></favorite>
@@ -41,6 +41,8 @@
 
 <script>
     import Favorite from "./Favorite";
+    import moment from 'moment';
+    import 'moment/locale/ru';
 
     export default {
 
@@ -57,6 +59,10 @@
         },
 
         computed: {
+            ago() {
+                return moment(this.data.created_at).fromNow();
+            },
+
             signedIn() {
                 return window.App.signedIn
             },

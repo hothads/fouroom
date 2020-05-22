@@ -20,20 +20,15 @@ class Thread extends Model
     {
         parent::boot();
 
-        static::addGlobalScope('replyCount', function ($builder) {
-            $builder->withCount('replies');
-        });
-
         static::deleting(function ($thread) {
+
             $thread->replies->each->delete();
+
 //            $thread->replies->each(function($reply){
 //                $reply->delete();
 //            });
         });
-
-
     }
-
 
     public function creator()
     {
@@ -63,6 +58,25 @@ class Thread extends Model
     public function scopeFilter($query, $filters)
     {
         return $filters->apply($query);
+    }
+
+    public function subscribe($userId = null)
+    {
+        $this->subsciptions()->create([
+           'user_id' => $userId ? : auth()->id()
+        ]);
+    }
+
+    public function subsciptions()
+    {
+        return $this->hasMany(ThreadSubscription::class);
+    }
+
+    public function unsubscribe($userId = null)
+    {
+        $this->subsciptions()
+            ->where('user_id', $userId ? : auth()->id())
+            ->delete();
     }
 
 }

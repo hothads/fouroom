@@ -4,7 +4,7 @@
     <div class="text-lg w-1/6 tracking-widest text-gray-700 font-semibold py-4 px-6 mr-6">
         Forum test
     </div>
-    
+
     <div class="flex w-full justify-between">
         <ul class="topmenu">
             <li><a href="#">Каналы</a>
@@ -18,6 +18,7 @@
                 <ul class="submenu">
                     <li><a href="/threads">Все</a></li>
                     <li><a href="/threads?popular=1">Популярные</a></li>
+                    <li><a href="/threads?unanswered=1">Не отвеченные</a></li>
                     @if(auth()->check())
                     <li><a href="/threads?by={{auth()->user()->name}}">Мои</a></li>
                     <li><a href="/threads/create">Добавить</a></li>
@@ -25,7 +26,7 @@
                 </ul>
             </li>
         </ul>
-        
+
         @guest
 
         <ul class="topmenu">
@@ -59,7 +60,7 @@
 
     @endguest
 
-</div>      
+</div>
 
 </nav>
 </div>
