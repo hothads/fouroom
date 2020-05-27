@@ -32,27 +32,27 @@ $factory->define(User::class, function (Faker $faker) {
 
 
 $factory->define(Thread::class, function (Faker $faker){
-	return [
-		'user_id'=> factory(User::class),
-		'channel_id'=>factory(Channel::class),
-		'title' =>$faker->sentence,
-		'body' =>$faker->paragraph
-	];
+    return [
+        'user_id'=> factory(User::class),
+        'channel_id'=>factory(Channel::class),
+        'title' =>$faker->sentence,
+        'body' =>$faker->paragraph
+    ];
 });
 
 
 $factory->define(Reply::class, function (Faker $faker){
-	return [
-		'user_id'=> factory(User::class),
-		'thread_id'=>factory(Thread::class),
-		'body' =>$faker->paragraph
-	];
+    return [
+        'user_id'=> factory(User::class),
+        'thread_id'=>factory(Thread::class),
+        'body' =>$faker->paragraph
+    ];
 });
 
 
 $factory->define(Channel::class, function (Faker $faker){
-	return [
-		'name'=> $faker->word,
-		'slug'=> $faker->word
-	];
+    return [
+        'name'=> $faker->word,
+        'slug'=> $faker->word
+    ];
 });

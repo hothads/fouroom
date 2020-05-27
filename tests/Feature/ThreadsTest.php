@@ -20,7 +20,7 @@ class ThreadsTest extends TestCase
     {
         $thread = factory(Thread::class)->create();
         $response = $this->get('/threads')
-        	->assertSee($thread->title);
+            ->assertSee($thread->title);
     }
 
 
@@ -29,7 +29,7 @@ class ThreadsTest extends TestCase
     {
         $thread = factory(Thread::class)->create();
         $response = $this->get($thread->path())
-        	->assertSee($thread->title);
+            ->assertSee($thread->title);
     }
 
 
@@ -96,7 +96,7 @@ class ThreadsTest extends TestCase
         $thread->subscribe($userId = 1);
         $this->assertEquals(
             1,
-            $thread->subsciptions()->where('user_id',$userId)->count()
+            $thread->subscriptions()->where('user_id',$userId)->count()
         );
     }
 
@@ -106,6 +106,6 @@ class ThreadsTest extends TestCase
         $thread = factory(Thread::class)->create();
         $thread->subscribe($userId = 1);
         $thread->unsubscribe($userId);
-        $this->assertCount(0, $thread->subsciptions);
+        $this->assertCount(0, $thread->subscriptions);
     }
 }

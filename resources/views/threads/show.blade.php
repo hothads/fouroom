@@ -53,7 +53,7 @@
                             <p>Автор: <a href="{{route('profile', $thread->creator)}}">{{$thread->creator->name}}</a></p>
                             <p v-text>Опубликовано: {{$thread->created_at->diffForHumans()}}</p>
                             <p>Комментариев: <span v-text="repliesCount"></span></p>
-
+                            <subscribe-button :active="{{ json_encode($thread->isSubscribedTo) }}"></subscribe-button>
                         </div>
                     </div>
                 </div>
