@@ -37,8 +37,9 @@
         @endif
 
         @else
-        <ul class="topmenu">
 
+        <ul class="topmenu">
+            <user-notifications></user-notifications>
             <li><a href="">{{ Auth::user()->name }}</a>
                 <ul class="submenu">
                     <li><a href="{{ route('profile', auth()->user()) }}">Личный кабинет</a></li>
