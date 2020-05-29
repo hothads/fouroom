@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use App\Notifications\ThreadWasUpdated;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Notification;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -26,7 +27,6 @@ class ThreadTest extends TestCase
         $thread = factory('App\Thread')->create();
         $this->assertInstanceOf('Illuminate\Database\Eloquent\Collection', $thread->replies);
     }
-
 
 
     /** @test */
@@ -61,8 +61,6 @@ class ThreadTest extends TestCase
 
         Notification::assertSentTo(auth()->user(), ThreadWasUpdated::class);
 
-
-
     }
 
     /** @test */
@@ -79,7 +77,7 @@ class ThreadTest extends TestCase
     {
         $thread = factory('App\Thread')->make();
 
-        $this->assertEquals('/threads/'.$thread->channel->slug.'/'.$thread->id, $thread->path());
+        $this->assertEquals('/threads/' . $thread->channel->slug . '/' . $thread->id, $thread->path());
     }
 
     /** @test */
@@ -95,8 +93,25 @@ class ThreadTest extends TestCase
 
         $this->assertTrue($thread->isSubscribedTo);
 
-
     }
 
+    /** @test */
+    function a_thread_can_check_if_the_auth_user_has_read_all_replies()
+    {
+        $this->signin();
+
+        $thread = factory('App\Thread')->create();
+
+        tap(auth()->user(), function($user) use ($thread){
+
+            $this->assertTrue($thread->hasUpdatesFor(auth()->user()));
+
+            $user->read($thread);
+
+            $this->assertFalse($thread->hasUpdatesFor($user));
+        });
+
+
+    }
 
 }

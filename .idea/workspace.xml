@@ -3,14 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="187f5823-2b8c-4ce5-be74-2d5e22af26d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Notifications/ThreadWasUpdated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Notifications/ThreadWasUpdated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/nav.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/NotificationsTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Flash.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Flash.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/NewReply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewReply.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ParticipateInForumTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ParticipateInForumTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -139,6 +141,11 @@
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Inspections" />
+    </key>
+  </component>
   <component name="RunManager" selected="JavaScript Debug.Reply.php">
     <configuration name="Reply.php" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/forum/Reply.php" useBuiltInWebServerPort="true">
       <method v="2" />
@@ -170,7 +177,8 @@
       <workItem from="1589525653576" duration="14791000" />
       <workItem from="1589784352388" duration="13537000" />
       <workItem from="1590566115443" duration="66000" />
-      <workItem from="1590567915954" duration="18125000" />
+      <workItem from="1590567915954" duration="24942000" />
+      <workItem from="1590740151190" duration="8847000" />
     </task>
     <servers />
   </component>
@@ -186,10 +194,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="97" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589791552927" />
-    <state x="1191" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590568284056">
+    <state x="1191" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1590665338646">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1191" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1590568284056" />
+    <state x="1191" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1590665338646" />
     <state x="784" y="327" width="414" height="467" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1590654226960">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -222,10 +230,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state x="594" y="226" key="NewPhpClassDialog" timestamp="1587472967812">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog" timestamp="1590744998213">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="594" y="226" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1587472967812" />
+    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1590744998213" />
     <state x="405" y="96" width="1022" height="737" key="SettingsEditor" timestamp="1590649853437">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -239,10 +248,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589792114872" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1590655194693">
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1590752241815">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="453" y="218" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589803382434" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1590655194693" />
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1590752241815" />
   </component>
 </project>

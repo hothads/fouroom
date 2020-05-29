@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Reply;
+use App\Inspections\Spam;
 use Illuminate\Http\Request;
 use App\Thread;
 
@@ -22,19 +23,29 @@ class RepliesController extends Controller
 
     public function store($channelId, Thread $thread)
     {
+        try {
+            $this->validateReply();
 
-        $this->validate(request(), ['body'=> 'required']);
-
-    	$reply = $thread->addReply([
-    		'body' => request('body'),
-    		'user_id' => auth()->id()
-    	]);
-
-    	if(request()->expectsJson()){
-    	    return $reply->load('owner');
+            $reply = $thread->addReply([
+                'body' => request('body'),
+                'user_id' => auth()->id()
+            ]);
+        } catch (\Exception $e) {
+            return response(
+                'Извините, но вы не можете сохранить изменения', 422
+            );
         }
 
-    	return back()->with('flash', 'Ваш комментарий опубликован');
+
+//    	if(request()->expectsJson()){
+//    	    return $reply->load('owner');
+//        }
+
+//            return back()->with('flash', 'Ваш комментарий опубликован');
+
+        return $reply->load('owner');
+
+
     }
 
     public function destroy(Reply $reply)
@@ -54,13 +65,32 @@ class RepliesController extends Controller
     {
         $this->authorize('update', $reply);
 
-        $reply->update(request(['body']));
+        try {
+            $this->validateReply();
 
-        if (request()->expectsJson()){
-            return response('Комментарий обновлен');
+            $reply->update(request(['body']));
+        } catch (\Exception $e) {
+            return response(
+                'Извините, но вы не можете сохранить изменения', 422
+            );
         }
 
+
+
+
+
+//        if (request()->expectsJson()){
+//            return response('Комментарий обновлен');
+//        }
+
         return back();
+    }
+
+    public function validateReply()
+    {
+        $this->validate(request(), ['body'=> 'required']);
+
+        resolve(Spam::class)->detect(request('body'));
     }
 
 }
