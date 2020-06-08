@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use App\Thread;
 use App\User;
@@ -45,8 +46,21 @@ class Reply extends Model
     	return $this->morphMany(Favorite::class, 'favorited');
     }
 
-    public function path(){
+    public function path()
+    {
 	    return $this->thread->path(). "#reply-{$this->id}";
+    }
+
+    public function wasJustAdded()
+    {
+        return $this->created_at->gt(Carbon::now()->subMinute()); //gt - more than
+    }
+
+    public function mentionedUsers()
+    {
+        preg_match_all('/\@([^\s\.]+)/', $this->body, $matches);
+
+        return $matches[1];
     }
 
 }

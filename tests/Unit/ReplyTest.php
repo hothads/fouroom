@@ -2,6 +2,8 @@
 
 namespace Tests\Unit;
 
+use App\Reply;
+use Carbon\Carbon;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -12,10 +14,28 @@ class ReplyTest extends TestCase
 
 	/** @test */
 
-	function it_has_an_owner() 
+	function it_has_an_owner()
 	{
 		$reply = factory('App\Reply')->create();
 
 		$this->assertInstanceOf('App\User', $reply->owner);
 	}
+
+	function it_knows_that_if_it_was_just_published()
+    {
+        $reply = factory('App\Reply')->create();
+        $this->assertTrue($reply->wasJustAdded());
+
+        $reply->created_at = Carbon::now()->subMonth();
+        $this->assertFalse($reply->wasJustAdded());
+
+    }
+
+    /** @test */
+    function it_can_detect_all_users_in_the_body()
+    {
+        $reply = factory(Reply::class)->create(['body'=>'@John to @Sara']);
+
+        $this->assertEquals(['John', 'Sara'], $reply->mentionedUsers());
+    }
 }

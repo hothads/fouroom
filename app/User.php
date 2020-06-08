@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Activity;
+use App\Reply;
 
 class User extends Authenticatable
 {
@@ -66,5 +67,11 @@ class User extends Authenticatable
             $this->visitedThreadCacheKey($thread),
             Carbon::now()
         );
+    }
+
+    public function lastReply()
+    {
+        // in this case hase one will retun the last created reply
+        return $this->hasOne(Reply::class)->latest();
     }
 }

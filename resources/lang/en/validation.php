@@ -146,6 +146,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'body'=>'текст',
+        'title'=>'заголовок'
+    ],
 
 ];

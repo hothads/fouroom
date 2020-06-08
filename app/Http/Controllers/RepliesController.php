@@ -2,10 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePostRequest;
+use App\Notifications\YouWereMentioned;
 use App\Reply;
-use App\Inspections\Spam;
+use App\Rules\SpamFree;
+use App\User;
 use Illuminate\Http\Request;
 use App\Thread;
+use Illuminate\Support\Facades\Gate;
 
 class RepliesController extends Controller
 {
@@ -21,30 +25,12 @@ class RepliesController extends Controller
     }
 
 
-    public function store($channelId, Thread $thread)
+    public function store($channelId, Thread $thread, CreatePostRequest $form)
     {
-        try {
-            $this->validateReply();
-
-            $reply = $thread->addReply([
-                'body' => request('body'),
-                'user_id' => auth()->id()
-            ]);
-        } catch (\Exception $e) {
-            return response(
-                'Извините, но вы не можете сохранить изменения', 422
-            );
-        }
-
-
-//    	if(request()->expectsJson()){
-//    	    return $reply->load('owner');
-//        }
-
-//            return back()->with('flash', 'Ваш комментарий опубликован');
-
-        return $reply->load('owner');
-
+        return $thread->addReply([
+            'body' => request('body'),
+            'user_id' => auth()->id()
+        ])->load('owner');
 
     }
 
@@ -66,31 +52,26 @@ class RepliesController extends Controller
         $this->authorize('update', $reply);
 
         try {
-            $this->validateReply();
+
+            request()->validate([
+               'body'=>['required', new SpamFree]
+            ]);
 
             $reply->update(request(['body']));
+
         } catch (\Exception $e) {
+
             return response(
+
                 'Извините, но вы не можете сохранить изменения', 422
+
             );
         }
-
-
-
-
-
 //        if (request()->expectsJson()){
 //            return response('Комментарий обновлен');
 //        }
 
-        return back();
     }
 
-    public function validateReply()
-    {
-        $this->validate(request(), ['body'=> 'required']);
-
-        resolve(Spam::class)->detect(request('body'));
-    }
 
 }

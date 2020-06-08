@@ -7,14 +7,14 @@
 
     <div class="flex w-full justify-between">
         <ul class="topmenu">
-            <li><a href="#">Каналы</a>
+            <li><a href="#">Рубрики</a>
                 <ul class="submenu">
                     @foreach($channels as $channel)
                     <li><a href="/threads/{{$channel->slug}}">{{$channel->slug}}</a></li>
                     @endforeach
                 </ul>
             </li>
-            <li><a href="#">Публикации</a>
+            <li><a href="#">Обсуждения</a>
                 <ul class="submenu">
                     <li><a href="/threads">Все</a></li>
                     <li><a href="/threads?popular=1">Популярные</a></li>

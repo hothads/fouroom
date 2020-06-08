@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Validator;
+
+
 use App\Channel;
 
 class AppServiceProvider extends ServiceProvider
@@ -35,16 +38,19 @@ class AppServiceProvider extends ServiceProvider
             });
 
             $view->with('channels', $channels);
-        
+
         });
 
-   
+        Validator::extend('spamfree', 'App\Rules\SpamFree@passes');
+
+
+
         // send variable to the choosen view
         // \View::composer('threads.create', function($view){
         //     $view->with('channels', \App\Channel::all());
         // });
 
-             
+
         //send variable to all views but after the view is loaded
         // \View::share('channels', Channel::all());
     }

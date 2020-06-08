@@ -45,9 +45,8 @@ class ParticipateInForumTest extends TestCase
 
         $reply = factory('App\Reply')->make(['body' => null]);
 
-        $this->post($thread->path().'/replies', $reply->toArray())
-            ->assertSessionHasErrors('body');
-
+        $this->json('post', $thread->path().'/replies', $reply->toArray())
+            ->assertStatus(422);
     }
 
     /** @test */
@@ -113,8 +112,6 @@ class ParticipateInForumTest extends TestCase
     /** @test */
     function replies_that_contain_spam_can_not_be_created()
     {
-        $this->withoutExceptionHandling();
-
         $this->signIn();
 
         $thread = factory('App\Thread')->create();
@@ -124,8 +121,26 @@ class ParticipateInForumTest extends TestCase
                 ['body'=>'Yahoo Customer Support']
             );
 
-        $this->expectException(\Exception::class);
+        $this->json('post', $thread->path().'/replies', $reply->toArray())->assertStatus(422);
+    }
 
-        $this->post($thread->path().'/replies', $reply->toArray());
+    /** @test */
+
+    function a_users_may_reply_once_per_minute()
+    {
+        $this->signIn();
+
+        $thread = factory('App\Thread')->create();
+
+        $reply = factory('App\Reply')
+            ->make(
+                ['body'=>'My simple reply']
+            );
+
+        $this->post($thread->path().'/replies', $reply->toArray())
+            ->assertStatus(201);
+
+        $this->post($thread->path().'/replies', $reply->toArray())
+            ->assertStatus(429);
     }
 }
