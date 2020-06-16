@@ -51,25 +51,10 @@ class RepliesController extends Controller
     {
         $this->authorize('update', $reply);
 
-        try {
+        request()->validate( ['body' => ['required', new SpamFree] ]);
 
-            request()->validate([
-               'body'=>['required', new SpamFree]
-            ]);
+        $reply->update(request(['body']));
 
-            $reply->update(request(['body']));
-
-        } catch (\Exception $e) {
-
-            return response(
-
-                'Извините, но вы не можете сохранить изменения', 422
-
-            );
-        }
-//        if (request()->expectsJson()){
-//            return response('Комментарий обновлен');
-//        }
 
     }
 

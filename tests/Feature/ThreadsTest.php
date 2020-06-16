@@ -14,7 +14,6 @@ class ThreadsTest extends TestCase
 
     use RefreshDatabase;
 
-
     /** @test */
     public function a_user_can_browse_all_threads()
     {
@@ -67,7 +66,7 @@ class ThreadsTest extends TestCase
         factory('App\Reply', 2)->create(['thread_id' => $threadWithTwoReplies->id]);
         factory('App\Reply', 3)->create(['thread_id' => $threadWithThreeReplies->id]);
         $response = $this->getJson('threads?popular=1')->json();
-        $this->assertEquals([3,2,0], array_column($response, 'replies_count'));
+        $this->assertEquals([3,2,0], array_column($response['data'], 'replies_count'));
     }
 
     /** @test */
@@ -76,7 +75,7 @@ class ThreadsTest extends TestCase
         $thread = factory('App\Thread', 2)->create();
         factory('App\Reply')->create(['thread_id' => Thread::first()->id]);
         $response = $this->getJson('threads?unanswered=1')->json();
-        $this->assertCount(1, $response);
+        $this->assertCount(1, $response['data']);
     }
 
     /** @test */

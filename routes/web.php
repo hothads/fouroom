@@ -55,6 +55,7 @@ Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload'
 
 // Route::resource('/threads', 'ThreadsController');
 
+Route::get('api/users', 'Api\UsersController@index');
 
 Route::get('/test', function(){
     return view('test');

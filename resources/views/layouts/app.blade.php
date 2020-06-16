@@ -25,6 +25,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    @yield('header')
 
 </head>
 <body class="bg-gray-100">

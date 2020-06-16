@@ -14,16 +14,18 @@
 
         <div class="forum-body">
             <div class="w-full" v-if="editing">
-                <textarea class="w-full rounded border border-gray-300 p-3" v-model="body"></textarea>
-                <div class="mt-2">
-                    <button class="text-xs rounded bg-blue-700 text-white px-2 py-1 mr-2" @click="update">Обновить
-                    </button>
-                    <button class="text-xs  text-gray-700 px-2 py-1 mr-2" @click="editing=false">Отменить</button>
-                </div>
+                <form @submit="update">
+                    <textarea class="w-full rounded border border-gray-300 p-3" v-model="body" required></textarea>
+                    <div class="mt-2">
+                        <button type="submit" class="text-xs rounded bg-blue-700 text-white px-2 py-1 mr-2">Обновить
+                        </button>
+                        <button class="text-xs  text-gray-700 px-2 py-1 mr-2" @click="editing=false" type="button">Отменить</button>
+                    </div>
+                </form>
             </div>
-
-            <article v-else v-text="body"></article>
+            <article v-else v-html="body"></article>
         </div>
+
 
         <div class="bg-gray-300 p-3 flex" v-if="canUpdate">
 

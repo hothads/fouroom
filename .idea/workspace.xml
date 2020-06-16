@@ -33,22 +33,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="187f5823-2b8c-4ce5-be74-2d5e22af26d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/php-test-framework.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/ReplyPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ReplyPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/NotifyMentionedUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/NotifyMentionedUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/NotifySubscribers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/NotifySubscribers.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/NewReply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewReply.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Reply.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ParticipateInForumTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ParticipateInForumTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ThreadsTest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -187,20 +188,20 @@
     </key>
   </component>
   <component name="RunManager" selected="PHPUnit.tests">
+    <configuration name="MentionUsersTest.it_can_fetch_all_mentioned_users_starting_with_the_given_character" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\MentionUsersTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" method="it_can_fetch_all_mentioned_users_starting_with_the_given_character" scope="Method" />
+      <method v="2" />
+    </configuration>
     <configuration name="MentionUsersTest.mentioned_users_in_a_reply_are_notified" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\MentionUsersTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" method="mentioned_users_in_a_reply_are_notified" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ParticipateInForumTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ParticipateInForumTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ParticipateInForumTest.php" scope="Class" />
-      <method v="2" />
-    </configuration>
-    <configuration name="ParticipateInForumTest.replies_that_contain_spam_can_not_be_created" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\ParticipateInForumTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/ParticipateInForumTest.php" method="replies_that_contain_spam_can_not_be_created" scope="Method" />
-      <method v="2" />
-    </configuration>
     <configuration name="ReplyTest.it_can_detect_all_users_in_the_body" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\ReplyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="it_can_detect_all_users_in_the_body" scope="Method" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ReplyTest.it_wraps_mentioned_usernames_in_the_body_within_anchor_tags" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ReplyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="it_wraps_mentioned_usernames_in_the_body_within_anchor_tags" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -214,10 +215,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.MentionUsersTest.it_can_fetch_all_mentioned_users_starting_with_the_given_character" />
+        <item itemvalue="PHPUnit.ReplyTest.it_wraps_mentioned_usernames_in_the_body_within_anchor_tags" />
         <item itemvalue="PHPUnit.MentionUsersTest.mentioned_users_in_a_reply_are_notified" />
         <item itemvalue="PHPUnit.ReplyTest.it_can_detect_all_users_in_the_body" />
-        <item itemvalue="PHPUnit.ParticipateInForumTest" />
-        <item itemvalue="PHPUnit.ParticipateInForumTest.replies_that_contain_spam_can_not_be_created" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +245,11 @@
       <workItem from="1591261997109" duration="675000" />
       <workItem from="1591343392005" duration="11827000" />
       <workItem from="1591361325776" duration="4721000" />
-      <workItem from="1591601696087" duration="11269000" />
+      <workItem from="1591601696087" duration="14796000" />
+      <workItem from="1591793831757" duration="2024000" />
+      <workItem from="1591861547509" duration="7315000" />
+      <workItem from="1592214572375" duration="547000" />
+      <workItem from="1592301130967" duration="615000" />
     </task>
     <servers />
   </component>
@@ -298,26 +303,26 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588243788249" />
     <state x="733" y="240" width="424" height="520" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1591347821324" />
-    <state width="878" height="285" key="GridCell.Tab.0.bottom" timestamp="1591615452628">
+    <state width="1802" height="516" key="GridCell.Tab.0.bottom" timestamp="1591871712434">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="878" height="285" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1591615452628" />
-    <state width="878" height="285" key="GridCell.Tab.0.center" timestamp="1591615452626">
+    <state width="1802" height="516" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1591871712434" />
+    <state width="1802" height="516" key="GridCell.Tab.0.center" timestamp="1591871712434">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="878" height="285" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1591615452626" />
-    <state width="878" height="285" key="GridCell.Tab.0.left" timestamp="1591615452625">
+    <state width="1802" height="516" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1591871712434" />
+    <state width="1802" height="516" key="GridCell.Tab.0.left" timestamp="1591871712433">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589825922927" />
-    <state width="878" height="285" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1591615452625" />
-    <state width="878" height="285" key="GridCell.Tab.0.right" timestamp="1591615452628">
+    <state width="1802" height="516" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1591871712433" />
+    <state width="1802" height="516" key="GridCell.Tab.0.right" timestamp="1591871712434">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="878" height="285" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1591615452628" />
+    <state width="1802" height="516" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1591871712434" />
     <state width="1802" height="351" key="GridCell.Tab.1.bottom" timestamp="1591347322717">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -356,10 +361,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589792114872" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1591615788379">
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1591871465112">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="453" y="218" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589803382434" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1591615788379" />
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1591871465112" />
   </component>
 </project>
