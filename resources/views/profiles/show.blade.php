@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="container max-w-4xl mx-auto mt-6">
-
+        <avatar-form :user="{{ $user }}"></avatar-form>
 
         @forelse($activities as $date => $activity)
 

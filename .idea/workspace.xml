@@ -33,24 +33,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="187f5823-2b8c-4ce5-be74-2d5e22af26d3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Trending.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/forum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/forum.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/RepliesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/NotifyMentionedUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/NotifyMentionedUsers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/NotifySubscribers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/NotifySubscribers.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Reply.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Reply.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/NewReply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NewReply.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Reply.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Feature/ThreadsTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/ThreadsTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ReplyTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/UserTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,6 +164,7 @@
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/psy/psysh" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
   <component name="ProjectId" id="1aqhHhEc9zpijsuXOo2N1QObu5i" />
@@ -178,7 +181,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../avto" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="php.override.implement.member.chooser.php.doc" value="NONE" />
-    <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -187,21 +190,21 @@
       <recent name="$PROJECT_DIR$/app/Inspections" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.tests">
-    <configuration name="MentionUsersTest.it_can_fetch_all_mentioned_users_starting_with_the_given_character" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\MentionUsersTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" method="it_can_fetch_all_mentioned_users_starting_with_the_given_character" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read">
+    <configuration name="AddAvatarTest.a_user_may_add_avatar_to_their_profile" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\AddAvatarTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AddAvatarTest.php" method="a_user_may_add_avatar_to_their_profile" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="MentionUsersTest.mentioned_users_in_a_reply_are_notified" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\MentionUsersTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/MentionUsersTest.php" method="mentioned_users_in_a_reply_are_notified" scope="Method" />
+    <configuration name="AddAvatarTest.a_valid_avatar_must_be_provided" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\AddAvatarTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AddAvatarTest.php" method="a_valid_avatar_must_be_provided" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ReplyTest.it_can_detect_all_users_in_the_body" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\ReplyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="it_can_detect_all_users_in_the_body" scope="Method" />
+    <configuration name="TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\TrendingThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/TrendingThreadsTest.php" method="it_increments_a_thread_score_each_time_it_is_read" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="ReplyTest.it_wraps_mentioned_usernames_in_the_body_within_anchor_tags" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\ReplyTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ReplyTest.php" method="it_wraps_mentioned_usernames_in_the_body_within_anchor_tags" scope="Method" />
+    <configuration name="UserTest.a_user_can_determine_their_avatars_path" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\UserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/UserTest.php" method="a_user_can_determine_their_avatars_path" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -214,11 +217,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="PHPUnit.TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read" />
         <item itemvalue="PHPUnit.tests" />
-        <item itemvalue="PHPUnit.MentionUsersTest.it_can_fetch_all_mentioned_users_starting_with_the_given_character" />
-        <item itemvalue="PHPUnit.ReplyTest.it_wraps_mentioned_usernames_in_the_body_within_anchor_tags" />
-        <item itemvalue="PHPUnit.MentionUsersTest.mentioned_users_in_a_reply_are_notified" />
-        <item itemvalue="PHPUnit.ReplyTest.it_can_detect_all_users_in_the_body" />
+        <item itemvalue="PHPUnit.UserTest.a_user_can_determine_their_avatars_path" />
+        <item itemvalue="PHPUnit.AddAvatarTest.a_user_may_add_avatar_to_their_profile" />
+        <item itemvalue="PHPUnit.AddAvatarTest.a_valid_avatar_must_be_provided" />
       </list>
     </recent_temporary>
   </component>
@@ -249,7 +252,11 @@
       <workItem from="1591793831757" duration="2024000" />
       <workItem from="1591861547509" duration="7315000" />
       <workItem from="1592214572375" duration="547000" />
-      <workItem from="1592301130967" duration="615000" />
+      <workItem from="1592301130967" duration="5815000" />
+      <workItem from="1592386605728" duration="5482000" />
+      <workItem from="1592477371661" duration="418000" />
+      <workItem from="1592553407307" duration="11138000" />
+      <workItem from="1592572606638" duration="3386000" />
     </task>
     <servers />
   </component>
@@ -277,15 +284,19 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="70" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1587469060527" />
+    <state x="635" y="297" width="551" height="342" key="#com.intellij.codeInsight.template.impl.EditVariableDialog" timestamp="1592302652853">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="635" y="297" width="551" height="342" key="#com.intellij.codeInsight.template.impl.EditVariableDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1592302652853" />
     <state x="763" y="151" width="412" height="645" key="#com.intellij.ide.util.MemberChooser" timestamp="1591612460050">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="574" y="97" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1589791552927" />
     <state x="763" y="151" width="412" height="645" key="#com.intellij.ide.util.MemberChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1591612460050" />
-    <state x="1191" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1591613488326">
+    <state x="1191" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1592387271091">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="1191" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1591613488326" />
+    <state x="1191" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1592387271091" />
     <state x="784" y="327" width="414" height="467" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method0" timestamp="1590654226960">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -303,26 +314,26 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588243788249" />
     <state x="733" y="240" width="424" height="520" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1591347821324" />
-    <state width="1802" height="516" key="GridCell.Tab.0.bottom" timestamp="1591871712434">
+    <state width="1802" height="369" key="GridCell.Tab.0.bottom" timestamp="1592576196935">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="516" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1591871712434" />
-    <state width="1802" height="516" key="GridCell.Tab.0.center" timestamp="1591871712434">
+    <state width="1802" height="369" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1592576196935" />
+    <state width="1802" height="369" key="GridCell.Tab.0.center" timestamp="1592576196933">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="516" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1591871712434" />
-    <state width="1802" height="516" key="GridCell.Tab.0.left" timestamp="1591871712433">
+    <state width="1802" height="369" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1592576196933" />
+    <state width="1802" height="369" key="GridCell.Tab.0.left" timestamp="1592576196932">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589825922927" />
-    <state width="1802" height="516" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1591871712433" />
-    <state width="1802" height="516" key="GridCell.Tab.0.right" timestamp="1591871712434">
+    <state width="1802" height="369" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1592576196932" />
+    <state width="1802" height="369" key="GridCell.Tab.0.right" timestamp="1592576196934">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="516" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1591871712434" />
+    <state width="1802" height="369" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1592576196934" />
     <state width="1802" height="351" key="GridCell.Tab.1.bottom" timestamp="1591347322717">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -339,32 +350,33 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1802" height="351" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1591347322717" />
-    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog" timestamp="1591363217854">
+    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog" timestamp="1592573995376">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="594" y="226" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1587472967812" />
-    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1591363217854" />
-    <state x="405" y="96" width="1022" height="737" key="SettingsEditor" timestamp="1591347832279">
+    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1592573995376" />
+    <state x="640" y="343" width="1022" height="737" key="SettingsEditor" timestamp="1592303008713">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587541840699" />
-    <state x="405" y="96" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1591347832279" />
+    <state x="640" y="343" width="1022" height="737" key="SettingsEditor/72.27.1848.1053@72.27.1848.1053" timestamp="1592303008713" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1589784353259">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1589784353259" />
-    <state x="475" y="141" width="1031" height="831" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1591001139802">
+    <state x="475" y="141" width="1031" height="831" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1592557236416">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
-    <state x="475" y="141" width="1031" height="831" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1591001139802" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1589792114872">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="475" y="141" width="1031" height="831" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/72.27.1848.1053@72.27.1848.1053" timestamp="1592557236416" />
+    <state x="583" y="266" key="run.anything.popup" timestamp="1592389208418">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589792114872" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1591871465112">
+    <state x="583" y="266" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1592389208418" />
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1592573705565">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="453" y="218" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589803382434" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1591871465112" />
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1592573705565" />
   </component>
 </project>

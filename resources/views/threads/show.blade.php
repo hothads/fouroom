@@ -12,14 +12,17 @@
             <div class="w-2/3">
                 <div class="forum-card">
                     <div class="forum-header">
+                        <div class="flex justify-start items-center">
+                            <img class="rounded-full mr-3" src="/storage/{{ $thread->creator->avatar_path }}"
+                                 alt="{{$thread->creator->name}}" width="50" >
 
-                        <h2>
-                            <a href="{{ route('profile', $thread->creator) }}">{{$thread->creator->name}}</a>
-                            said {{ $thread->title }}
-                        </h2>
-
+                            <h2>
+                                <a href="{{ route('profile', $thread->creator) }}">{{$thread->creator->name}}</a>
+                                said {{ $thread->title }}
+                            </h2>
+                        </div>
                         @can('update', $thread)
-                            <div>
+                            <div class="flex items-center">
                                 <form method="POST" action="{{$thread->path()}}">
                                     @csrf
                                     @method('DELETE')
@@ -54,7 +57,8 @@
                     <div class="px-5 py-3">
                         <div class="mb-2">
 
-                            <p>Автор: <a href="{{route('profile', $thread->creator)}}">{{$thread->creator->name}}</a></p>
+                            <p>Автор: <a href="{{route('profile', $thread->creator)}}">{{$thread->creator->name}}</a>
+                            </p>
                             <p v-text>Опубликовано: {{$thread->created_at->diffForHumans()}}</p>
                             <p>Комментариев: <span v-text="repliesCount"></span></p>
                             <subscribe-button :active="{{ json_encode($thread->isSubscribedTo) }}"></subscribe-button>
