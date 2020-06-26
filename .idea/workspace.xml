@@ -35,6 +35,7 @@
     <list default="true" id="187f5823-2b8c-4ce5-be74-2d5e22af26d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/RecordsVisits.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
@@ -175,21 +176,21 @@
       <recent name="$PROJECT_DIR$/app/Inspections" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.ThreadTest.a_thread_records_each_visit">
-    <configuration name="AddAvatarTest.a_user_may_add_avatar_to_their_profile" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\AddAvatarTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AddAvatarTest.php" method="a_user_may_add_avatar_to_their_profile" scope="Method" />
+  <component name="RunManager" selected="PHPUnit.tests">
+    <configuration name="ThreadTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ThreadTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ThreadTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <configuration name="ThreadTest.a_thread_records_each_visit" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Unit\ThreadTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ThreadTest.php" method="a_thread_records_each_visit" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\TrendingThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/TrendingThreadsTest.php" method="it_increments_a_thread_score_each_time_it_is_read" scope="Method" />
+    <configuration name="ThreadTest.a_thread_records_each_visits" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ThreadTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ThreadTest.php" method="a_thread_records_each_visits" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="UserTest.a_user_can_determine_their_avatars_path" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Unit\UserTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/UserTest.php" method="a_user_can_determine_their_avatars_path" scope="Method" />
+    <configuration name="TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\TrendingThreadsTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/TrendingThreadsTest.php" method="it_increments_a_thread_score_each_time_it_is_read" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -202,11 +203,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.ThreadTest.a_thread_records_each_visit" />
         <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.ThreadTest" />
+        <item itemvalue="PHPUnit.ThreadTest.a_thread_records_each_visits" />
+        <item itemvalue="PHPUnit.ThreadTest.a_thread_records_each_visit" />
         <item itemvalue="PHPUnit.TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read" />
-        <item itemvalue="PHPUnit.UserTest.a_user_can_determine_their_avatars_path" />
-        <item itemvalue="PHPUnit.AddAvatarTest.a_user_may_add_avatar_to_their_profile" />
       </list>
     </recent_temporary>
   </component>
@@ -242,7 +243,7 @@
       <workItem from="1592477371661" duration="418000" />
       <workItem from="1592553407307" duration="11138000" />
       <workItem from="1592572606638" duration="3884000" />
-      <workItem from="1593157945767" duration="2771000" />
+      <workItem from="1593157945767" duration="6787000" />
     </task>
     <servers />
   </component>
@@ -305,26 +306,26 @@
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588243788249" />
     <state x="733" y="240" width="424" height="520" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1591347821324" />
-    <state width="1802" height="369" key="GridCell.Tab.0.bottom" timestamp="1593161001938">
+    <state width="1802" height="369" key="GridCell.Tab.0.bottom" timestamp="1593167321797">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="369" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1593161001938" />
-    <state width="1802" height="369" key="GridCell.Tab.0.center" timestamp="1593161001938">
+    <state width="1802" height="369" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1593167321797" />
+    <state width="1802" height="369" key="GridCell.Tab.0.center" timestamp="1593167321797">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="369" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1593161001938" />
-    <state width="1802" height="369" key="GridCell.Tab.0.left" timestamp="1593161001937">
+    <state width="1802" height="369" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1593167321797" />
+    <state width="1802" height="369" key="GridCell.Tab.0.left" timestamp="1593167321796">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589825922927" />
-    <state width="1802" height="369" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1593161001937" />
-    <state width="1802" height="369" key="GridCell.Tab.0.right" timestamp="1593161001938">
+    <state width="1802" height="369" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1593167321796" />
+    <state width="1802" height="369" key="GridCell.Tab.0.right" timestamp="1593167321797">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="369" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1593161001938" />
+    <state width="1802" height="369" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1593167321797" />
     <state width="1802" height="351" key="GridCell.Tab.1.bottom" timestamp="1591347322717">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -341,11 +342,11 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1802" height="351" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1591347322717" />
-    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog" timestamp="1593160602430">
+    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog" timestamp="1593164900272">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="594" y="226" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1587472967812" />
-    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1593160602430" />
+    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1593164900272" />
     <state x="640" y="343" width="1022" height="737" key="SettingsEditor" timestamp="1592303008713">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -364,10 +365,10 @@
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589792114872" />
     <state x="583" y="266" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1592389208418" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1593161025053">
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1593165085438">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="453" y="218" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589803382434" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1593161025053" />
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1593165085438" />
   </component>
 </project>

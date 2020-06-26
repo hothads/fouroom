@@ -5,13 +5,14 @@ namespace App;
 use App\Events\ThreadReseivedNewReply;
 use App\Notifications\ThreadWasUpdated;
 use Illuminate\Database\Eloquent\Model;
+use App\Visits;
 use App\Reply;
 use App\User;
 
 class Thread extends Model
 {
 
-    use RecordsActivity, RecordsVisits;
+    use RecordsActivity;
 
     protected $guarded = [];
 
@@ -60,7 +61,6 @@ class Thread extends Model
 
         event(new ThreadReseivedNewReply($reply));
 
-
         return $reply;
     }
 
@@ -102,6 +102,11 @@ class Thread extends Model
         $key = $user->visitedThreadCacheKey($this);
 
         return $this->updated_at > cache($key);
+    }
+
+    public function visits()
+    {
+        return new Visits($this);
     }
 
 }

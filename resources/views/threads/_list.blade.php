@@ -33,7 +33,7 @@
 
         </div>
 
-        <div class="bg-blue-100 px-5 py-2">Просмотров: {{$thread->visits()}}</div>
+        <div class="bg-blue-100 px-5 py-2">Просмотров: {{$thread->visits()->count()}}</div>
 
     </div>
 
