@@ -33,26 +33,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="187f5823-2b8c-4ce5-be74-2d5e22af26d3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Trending.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/forum.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/forum.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ThreadsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/Unit/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/UserTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Thread.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Thread.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Unit/ThreadTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,13 +175,13 @@
       <recent name="$PROJECT_DIR$/app/Inspections" />
     </key>
   </component>
-  <component name="RunManager" selected="PHPUnit.TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read">
+  <component name="RunManager" selected="PHPUnit.ThreadTest.a_thread_records_each_visit">
     <configuration name="AddAvatarTest.a_user_may_add_avatar_to_their_profile" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\AddAvatarTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AddAvatarTest.php" method="a_user_may_add_avatar_to_their_profile" scope="Method" />
       <method v="2" />
     </configuration>
-    <configuration name="AddAvatarTest.a_valid_avatar_must_be_provided" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\AddAvatarTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Feature/AddAvatarTest.php" method="a_valid_avatar_must_be_provided" scope="Method" />
+    <configuration name="ThreadTest.a_thread_records_each_visit" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Unit\ThreadTest" configuration_file="$PROJECT_DIR$/phpunit.xml" file="$PROJECT_DIR$/tests/Unit/ThreadTest.php" method="a_thread_records_each_visit" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -217,11 +202,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read" />
+        <item itemvalue="PHPUnit.ThreadTest.a_thread_records_each_visit" />
         <item itemvalue="PHPUnit.tests" />
+        <item itemvalue="PHPUnit.TrendingThreadsTest.it_increments_a_thread_score_each_time_it_is_read" />
         <item itemvalue="PHPUnit.UserTest.a_user_can_determine_their_avatars_path" />
         <item itemvalue="PHPUnit.AddAvatarTest.a_user_may_add_avatar_to_their_profile" />
-        <item itemvalue="PHPUnit.AddAvatarTest.a_valid_avatar_must_be_provided" />
       </list>
     </recent_temporary>
   </component>
@@ -256,7 +241,8 @@
       <workItem from="1592386605728" duration="5482000" />
       <workItem from="1592477371661" duration="418000" />
       <workItem from="1592553407307" duration="11138000" />
-      <workItem from="1592572606638" duration="3386000" />
+      <workItem from="1592572606638" duration="3884000" />
+      <workItem from="1593157945767" duration="2771000" />
     </task>
     <servers />
   </component>
@@ -305,35 +291,40 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="510" y="0" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#method1/0.0.1536.824@0.0.1536.824" timestamp="1587563389946" />
-    <state x="548" y="163" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1" timestamp="1587473098027">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="754" y="427" width="474" height="260" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1" timestamp="1593160377422">
+      <screen x="72" y="27" width="1848" height="1053" />
+    </state>
+    <state x="754" y="427" width="474" height="260" key="#com.jetbrains.php.refactoring.move.PhpMoveClassDialog#1/72.27.1848.1053@72.27.1848.1053" timestamp="1593160377422" />
+    <state x="731" y="235" width="440" height="539" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1" timestamp="1593160716021">
+      <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="548" y="163" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/0.0.1536.824@0.0.1536.824" timestamp="1587473098027" />
+    <state x="731" y="235" width="440" height="539" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/72.27.1848.1053@72.27.1848.1053" timestamp="1593160716021" />
     <state x="733" y="240" width="424" height="520" key="FileChooserDialogImpl" timestamp="1591347821324">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1588243788249" />
     <state x="733" y="240" width="424" height="520" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1591347821324" />
-    <state width="1802" height="369" key="GridCell.Tab.0.bottom" timestamp="1592576196935">
+    <state width="1802" height="369" key="GridCell.Tab.0.bottom" timestamp="1593161001938">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="369" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1592576196935" />
-    <state width="1802" height="369" key="GridCell.Tab.0.center" timestamp="1592576196933">
+    <state width="1802" height="369" key="GridCell.Tab.0.bottom/72.27.1848.1053@72.27.1848.1053" timestamp="1593161001938" />
+    <state width="1802" height="369" key="GridCell.Tab.0.center" timestamp="1593161001938">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="369" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1592576196933" />
-    <state width="1802" height="369" key="GridCell.Tab.0.left" timestamp="1592576196932">
+    <state width="1802" height="369" key="GridCell.Tab.0.center/72.27.1848.1053@72.27.1848.1053" timestamp="1593161001938" />
+    <state width="1802" height="369" key="GridCell.Tab.0.left" timestamp="1593161001937">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1589825922927" />
-    <state width="1802" height="369" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1592576196932" />
-    <state width="1802" height="369" key="GridCell.Tab.0.right" timestamp="1592576196934">
+    <state width="1802" height="369" key="GridCell.Tab.0.left/72.27.1848.1053@72.27.1848.1053" timestamp="1593161001937" />
+    <state width="1802" height="369" key="GridCell.Tab.0.right" timestamp="1593161001938">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1589825922928" />
-    <state width="1802" height="369" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1592576196934" />
+    <state width="1802" height="369" key="GridCell.Tab.0.right/72.27.1848.1053@72.27.1848.1053" timestamp="1593161001938" />
     <state width="1802" height="351" key="GridCell.Tab.1.bottom" timestamp="1591347322717">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -350,11 +341,11 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state width="1802" height="351" key="GridCell.Tab.1.right/72.27.1848.1053@72.27.1848.1053" timestamp="1591347322717" />
-    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog" timestamp="1592573995376">
+    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog" timestamp="1593160602430">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="594" y="226" key="NewPhpClassDialog/0.0.1536.824@0.0.1536.824" timestamp="1587472967812" />
-    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1592573995376" />
+    <state x="787" y="316" width="545" height="568" key="NewPhpClassDialog/72.27.1848.1053@72.27.1848.1053" timestamp="1593160602430" />
     <state x="640" y="343" width="1022" height="737" key="SettingsEditor" timestamp="1592303008713">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
@@ -373,10 +364,10 @@
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1589792114872" />
     <state x="583" y="266" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1592389208418" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1592573705565">
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup" timestamp="1593161025053">
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="453" y="218" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1589803382434" />
-    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1592573705565" />
+    <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1593161025053" />
   </component>
 </project>
