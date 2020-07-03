@@ -11,7 +11,7 @@
 	</div>
 
     <div class="flex">
-        <div class="w-2/3 mr-2">
+        <div class="w-2/3 mr-6">
 
             @include('threads._list')
             {{ $threads->render() }}
@@ -21,7 +21,7 @@
         <div class="w-1/3">
             <div class="forum-card">
                 <div class="forum-header">
-                    Trending threads
+                    Самое популярное
                 </div>
 
                 <div class="forum-body">

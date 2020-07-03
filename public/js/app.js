@@ -3195,6 +3195,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['reply'],
   data: function data() {
@@ -3712,6 +3717,10 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
 //
 //
 //
@@ -61409,12 +61418,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("button", { class: _vm.classes, attrs: { type: "submit" } }, [
-    _c("span", {
-      domProps: { textContent: _vm._s(_vm.count) },
-      on: { click: _vm.toggle }
-    })
-  ])
+  return _c(
+    "button",
+    { staticClass: "flex", class: _vm.classes, attrs: { type: "submit" } },
+    [
+      _c(
+        "svg",
+        {
+          staticClass: "w-4 fill-current mr-3",
+          attrs: { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 20 20" },
+          on: { click: _vm.toggle }
+        },
+        [
+          _c("path", {
+            attrs: {
+              d:
+                "M11 0h1v3l3 7v8a2 2 0 01-2 2H5c-1.1 0-2.31-.84-2.7-1.88L0 12v-2a2 2 0 012-2h7V2a2 2 0 012-2zm6 10h3v10h-3V10z"
+            }
+          })
+        ]
+      ),
+      _vm._v(" "),
+      _c("span", {
+        domProps: { textContent: _vm._s(_vm.count) },
+        on: { click: _vm.toggle }
+      })
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -61914,7 +61944,26 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _vm.notifications.length
     ? _c("li", [
-        _c("a", { attrs: { href: "" } }, [_vm._v("Уведомления")]),
+        _c("a", { attrs: { href: "" } }, [
+          _c(
+            "svg",
+            {
+              staticClass: "w-5 fill-current",
+              attrs: {
+                xmlns: "http://www.w3.org/2000/svg",
+                viewBox: "0 0 20 20"
+              }
+            },
+            [
+              _c("path", {
+                attrs: {
+                  d:
+                    "M4 8a6 6 0 014.03-5.67 2 2 0 113.95 0A6 6 0 0116 8v6l3 2v1H1v-1l3-2V8zm8 10a2 2 0 11-4 0h4z"
+                }
+              })
+            ]
+          )
+        ]),
         _vm._v(" "),
         _c(
           "ul",

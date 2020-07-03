@@ -40,7 +40,7 @@
 
         <ul class="topmenu">
             <user-notifications></user-notifications>
-            <li><a href="">{{ Auth::user()->name }}</a>
+            <li class="cursor-pointer">{{ Auth::user()->name }}
                 <ul class="submenu">
                     <li><a href="{{ route('profile', auth()->user()) }}">Личный кабинет</a></li>
                     <li>
