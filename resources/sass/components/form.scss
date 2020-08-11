@@ -1,0 +1,21 @@
+/* auth forms */
+
+.auth_form {
+    @apply .flex .flex-col;
+}
+
+.auth_form > label {
+    @apply .mb-1 .font-bold .text-gray-700 .text-sm .mt-6;
+}
+
+.auth_form > input {
+    @apply .rounded  .p-2 .bg-gray-200;
+}
+
+.auth_form > span {
+    @apply .text-xs .text-red-600 .mt-1;
+}
+
+.is-invalid {
+    @apply .border .border-red-500;
+}

@@ -1,0 +1,11 @@
+.button-blue {
+    @apply .bg-blue-500 text-white font-bold py-2 px-4 rounded mb-6;
+
+    &:hover {
+        @apply .bg-blue-700;
+    }
+
+    &:focus {
+        @apply .outline-none .shadow-outline;
+    }
+}

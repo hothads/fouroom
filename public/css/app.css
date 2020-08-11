@@ -14182,6 +14182,59 @@ video {
   transition-duration: 1000ms;
 }
 
+.button-blue {
+  background-color: #4299e1;
+  color: #fff;
+  font-weight: 700;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 0.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.button-blue:hover {
+  background-color: #2b6cb0;
+}
+
+.button-blue:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+/* auth forms */
+
+.auth_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth_form > label {
+  margin-bottom: 0.25rem;
+  font-weight: 700;
+  color: #4a5568;
+  font-size: 0.875rem;
+  margin-top: 1.5rem;
+}
+
+.auth_form > input {
+  border-radius: 0.25rem;
+  padding: 0.5rem;
+  background-color: #edf2f7;
+}
+
+.auth_form > span {
+  font-size: 0.75rem;
+  color: #e53e3e;
+  margin-top: 0.25rem;
+}
+
+.is-invalid {
+  border-width: 1px;
+  border-color: #f56565;
+}
+
 v-cloak {
   display: none;
 }

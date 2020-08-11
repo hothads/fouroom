@@ -1,28 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+    <div class="container mx-auto max-w-3xl">
+        <div class="mt-12 bg-white p-6">
 
-                <div class="card-body">
-                    @if (session('resent'))
-                        <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
-                        </div>
-                    @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }},
-                    <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                        @csrf
-                        <button type="submit" class="btn btn-link p-0 m-0 align-baseline">{{ __('click here to request another') }}</button>.
-                    </form>
-                </div>
+            <div class="font-semibold text-xl mb-6">{{ __('Подтвердите ваш адрес электронной почты') }}</div>
+
+            <div class="card-body">
+                @if (session('resent'))
+                    <div class="alert alert-success" role="alert">
+                        {{ __('Ссылка для подтверждения вашего аккаунта отправлена вам на почту.') }}
+                    </div>
+                @endif
+
+                <p class="mb-3">{{ __('Перед тем как продолжить, пожалуйста, подтвердите ваш адрес электронной почты') }}</p>
+
+                <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                    @csrf
+                    <button type="submit" class="font-semibold text-blue-500">{{ __('Отправить ссылку повторно') }}</button>
+                </form>
             </div>
+
+
         </div>
     </div>
-</div>
 @endsection

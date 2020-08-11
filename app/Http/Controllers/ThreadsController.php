@@ -73,8 +73,10 @@ class ThreadsController extends Controller
             'body'=>request('body')
         ]);
 
+
+
         return redirect($thread->path())
-                ->with('flash', 'Ваш пост опубликован!');
+                ->with('flash', 'Ваш пост опубликован');
     }
 
     /**
