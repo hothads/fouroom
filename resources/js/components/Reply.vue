@@ -1,13 +1,13 @@
 <template>
-    <div :id="'reply-'+ id " class="forum-card">
+    <div :id="'reply-'+ id " class="forum-card" :class="isBest ? 'bg-blue-100' : 'bg-white'">
 
         <div class="forum-header">
             <h2>
-                <a :href="'/profiles/' + data.owner.name" v-text="data.owner.name"></a>
+                <a :href="'/profiles/' + reply.owner.name" v-text="reply.owner.name"></a>
                 said <span v-text="ago"></span>
             </h2>
             <div v-if="signedIn">
-                <favorite :reply="data"></favorite>
+                <favorite :reply="reply"></favorite>
             </div>
         </div>
 
@@ -27,12 +27,22 @@
         </div>
 
 
-        <div class="bg-gray-300 p-3 flex" v-if="canUpdate">
+        <div class="flex bg-gray-300 p-3 flex items-center justify-between"
+             v-if="authorize('updateReply', reply) || authorize('updateThread', reply.thread)" >
 
-            <button class="text-xs rounded bg-gray-700 text-white px-2 py-1 mr-2" @click="editing = true">Редактировать
-                комментарий
-            </button>
-            <button class="text-xs rounded bg-red-700 text-white px-2 py-1 mr-2" @click="destroy">Удалить комментарий
+           <div v-if="authorize('updateReply', reply)">
+               <button class="button-black-sm mr-3" @click="editing = true">Редактировать
+                   комментарий
+               </button>
+               <button class="button-red-sm" @click="destroy">Удалить комментарий
+               </button>
+           </div>
+
+            <button
+                class="button-blue-sm"
+                v-if="authorize('updateThread', reply.thread)"
+                v-show="!isBest"
+                @click="markBestReply">Лучший ответ?
             </button>
 
         </div>
@@ -50,35 +60,34 @@
 
         components: {Favorite},
 
-        props: ['data'],
+        props: ['reply'],
 
         data() {
             return {
                 editing: false,
-                id: this.data.id,
-                body: this.data.body
+                id: this.reply.id,
+                body: this.reply.body,
+                isBest: this.reply.isBest,
             };
+        },
+
+        created() {
+            window.events.$on('best-reply-selected', id => {
+                this.isBest = (id === this.id)
+            })
         },
 
         computed: {
             ago() {
-                return moment(this.data.created_at).fromNow();
+                return moment(this.reply.created_at).fromNow();
             },
 
-            signedIn() {
-                return window.App.signedIn
-            },
-
-            canUpdate() {
-               return  this.authorize(user => this.data.user_id == user.id);
-                // return this.data.user_id == window.App.user.id
-            }
         },
 
         methods: {
             update() {
                 axios.patch(
-                    '/replies/' + this.data.id, {
+                    '/replies/' + this.reply.id, {
                         body: this.body
                     })
                     .catch(error => {
@@ -91,14 +100,19 @@
             },
 
             destroy() {
-                axios.delete('/replies/' + this.data.id);
+                axios.delete('/replies/' + this.id);
 
-                this.$emit('deleted', this.data.id);
+                this.$emit('deleted', this.id);
 
                 // $(this.$el).fadeOut(300, () => {
                 //     flash('Комментарий Удален');
                 // });
 
+            },
+
+            markBestReply() {
+                axios.post('/replies/'+this.id+'/best');
+                window.events.$emit('best-reply-selected', this.id);
             }
         }
     }

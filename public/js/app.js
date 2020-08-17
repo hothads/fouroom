@@ -3400,11 +3400,11 @@ __webpack_require__.r(__webpack_exports__);
       body: ''
     };
   },
-  computed: {
-    signedIn: function signedIn() {
-      return window.App.signedIn;
-    }
-  },
+  // computed: {
+  //     signedIn() {
+  //         return window.App.signedIn;
+  //     }
+  // },
   mounted: function mounted() {
     $('#body').atwho({
       at: "@",
@@ -3625,6 +3625,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -3632,32 +3642,30 @@ __webpack_require__.r(__webpack_exports__);
   components: {
     Favorite: _Favorite__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
-  props: ['data'],
+  props: ['reply'],
   data: function data() {
     return {
       editing: false,
-      id: this.data.id,
-      body: this.data.body
+      id: this.reply.id,
+      body: this.reply.body,
+      isBest: this.reply.isBest
     };
+  },
+  created: function created() {
+    var _this = this;
+
+    window.events.$on('best-reply-selected', function (id) {
+      _this.isBest = id === _this.id;
+    });
   },
   computed: {
     ago: function ago() {
-      return moment__WEBPACK_IMPORTED_MODULE_1___default()(this.data.created_at).fromNow();
-    },
-    signedIn: function signedIn() {
-      return window.App.signedIn;
-    },
-    canUpdate: function canUpdate() {
-      var _this = this;
-
-      return this.authorize(function (user) {
-        return _this.data.user_id == user.id;
-      }); // return this.data.user_id == window.App.user.id
+      return moment__WEBPACK_IMPORTED_MODULE_1___default()(this.reply.created_at).fromNow();
     }
   },
   methods: {
     update: function update() {
-      axios.patch('/replies/' + this.data.id, {
+      axios.patch('/replies/' + this.reply.id, {
         body: this.body
       })["catch"](function (error) {
         flash(error.response.data, 'danger');
@@ -3666,10 +3674,14 @@ __webpack_require__.r(__webpack_exports__);
       flash('Комментарий обновлен');
     },
     destroy: function destroy() {
-      axios["delete"]('/replies/' + this.data.id);
-      this.$emit('deleted', this.data.id); // $(this.$el).fadeOut(300, () => {
+      axios["delete"]('/replies/' + this.id);
+      this.$emit('deleted', this.id); // $(this.$el).fadeOut(300, () => {
       //     flash('Комментарий Удален');
       // });
+    },
+    markBestReply: function markBestReply() {
+      axios.post('/replies/' + this.id + '/best');
+      window.events.$emit('best-reply-selected', this.id);
     }
   }
 });
@@ -61790,7 +61802,7 @@ var render = function() {
           { key: reply.id },
           [
             _c("reply", {
-              attrs: { data: reply },
+              attrs: { reply: reply },
               on: {
                 deleted: function($event) {
                   return _vm.remove(index)
@@ -61836,20 +61848,24 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "forum-card", attrs: { id: "reply-" + _vm.id } },
+    {
+      staticClass: "forum-card",
+      class: _vm.isBest ? "bg-blue-100" : "bg-white",
+      attrs: { id: "reply-" + _vm.id }
+    },
     [
       _c("div", { staticClass: "forum-header" }, [
         _c("h2", [
           _c("a", {
-            attrs: { href: "/profiles/" + _vm.data.owner.name },
-            domProps: { textContent: _vm._s(_vm.data.owner.name) }
+            attrs: { href: "/profiles/" + _vm.reply.owner.name },
+            domProps: { textContent: _vm._s(_vm.reply.owner.name) }
           }),
           _vm._v("\n            said "),
           _c("span", { domProps: { textContent: _vm._s(_vm.ago) } })
         ]),
         _vm._v(" "),
         _vm.signedIn
-          ? _c("div", [_c("favorite", { attrs: { reply: _vm.data } })], 1)
+          ? _c("div", [_c("favorite", { attrs: { reply: _vm.reply } })], 1)
           : _vm._e()
       ]),
       _vm._v(" "),
@@ -61909,32 +61925,65 @@ var render = function() {
           : _c("article", { domProps: { innerHTML: _vm._s(_vm.body) } })
       ]),
       _vm._v(" "),
-      _vm.canUpdate
-        ? _c("div", { staticClass: "bg-gray-300 p-3 flex" }, [
-            _c(
-              "button",
-              {
-                staticClass:
-                  "text-xs rounded bg-gray-700 text-white px-2 py-1 mr-2",
-                on: {
-                  click: function($event) {
-                    _vm.editing = true
-                  }
-                }
-              },
-              [_vm._v("Редактировать\n            комментарий\n        ")]
-            ),
-            _vm._v(" "),
-            _c(
-              "button",
-              {
-                staticClass:
-                  "text-xs rounded bg-red-700 text-white px-2 py-1 mr-2",
-                on: { click: _vm.destroy }
-              },
-              [_vm._v("Удалить комментарий\n        ")]
-            )
-          ])
+      _vm.authorize("updateReply", _vm.reply) ||
+      _vm.authorize("updateThread", _vm.reply.thread)
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "flex bg-gray-300 p-3 flex items-center justify-between"
+            },
+            [
+              _vm.authorize("updateReply", _vm.reply)
+                ? _c("div", [
+                    _c(
+                      "button",
+                      {
+                        staticClass: "button-black-sm mr-3",
+                        on: {
+                          click: function($event) {
+                            _vm.editing = true
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "Редактировать\n               комментарий\n           "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "button-red-sm",
+                        on: { click: _vm.destroy }
+                      },
+                      [_vm._v("Удалить комментарий\n           ")]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.authorize("updateThread", _vm.reply.thread)
+                ? _c(
+                    "button",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: !_vm.isBest,
+                          expression: "!isBest"
+                        }
+                      ],
+                      staticClass: "button-blue-sm",
+                      on: { click: _vm.markBestReply }
+                    },
+                    [_vm._v("Лучший ответ?\n        ")]
+                  )
+                : _vm._e()
+            ]
+          )
         : _vm._e()
     ]
   )
@@ -74213,12 +74262,24 @@ module.exports = function(module) {
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"); //глобальная переменная
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 
-window.Vue.prototype.authorize = function (handler) {
-  var user = window.App.user;
-  return user ? handler(user) : false;
+var authorizations = __webpack_require__(/*! ./authorizations */ "./resources/js/authorizations.js"); //глобальная переменная
+
+
+window.Vue.prototype.authorize = function () {
+  for (var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++) {
+    params[_key] = arguments[_key];
+  }
+
+  if (typeof params[0] === 'string') {
+    return authorizations[params[0]](params[1]);
+  }
+
+  return params[0](window.App.user);
 };
+
+window.Vue.prototype.signedIn = window.App.signedIn;
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -74228,7 +74289,6 @@ window.Vue.prototype.authorize = function (handler) {
  */
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
 
 Vue.component('flash', __webpack_require__(/*! ./components/Flash.vue */ "./resources/js/components/Flash.vue")["default"]);
 Vue.component('main-menu', __webpack_require__(/*! ./components/MenuComponent.vue */ "./resources/js/components/MenuComponent.vue")["default"]);
@@ -74255,6 +74315,29 @@ window.flash = function (message) {
 var app = new Vue({
   el: '#app'
 });
+
+/***/ }),
+
+/***/ "./resources/js/authorizations.js":
+/*!****************************************!*\
+  !*** ./resources/js/authorizations.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+var user = window.App.user;
+module.exports = {
+  updateReply: function updateReply(reply) {
+    return reply.user_id === user.id;
+  },
+  updateThread: function updateThread(thread) {
+    return thread.user_id === user.id;
+  },
+  owns: function owns(model) {
+    var prop = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'user_id';
+    return model[prop] === user.id;
+  }
+};
 
 /***/ }),
 

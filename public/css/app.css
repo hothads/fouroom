@@ -14182,8 +14182,9 @@ video {
   transition-duration: 1000ms;
 }
 
-.button-blue {
-  background-color: #4299e1;
+.button-blue, .button-green,
+.button-yellow, .button-red,
+.button-black, .button-gray {
   color: #fff;
   font-weight: 700;
   padding-top: 0.5rem;
@@ -14194,11 +14195,78 @@ video {
   margin-bottom: 1.5rem;
 }
 
-.button-blue:hover {
+.button-blue:focus, .button-green:focus,
+.button-yellow:focus, .button-red:focus,
+.button-black:focus, .button-gray:focus {
+  outline: 0;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.button-blue, .button-blue-sm {
+  background-color: #4299e1;
+}
+
+.button-blue:hover, .button-blue-sm:hover {
   background-color: #2b6cb0;
 }
 
-.button-blue:focus {
+.button-green, .button-green-sm {
+  background-color: #48bb78;
+}
+
+.button-green:hover, .button-green-sm:hover {
+  background-color: #2f855a;
+}
+
+.button-yellow, .button-yellow-sm {
+  background-color: #ecc94b;
+}
+
+.button-yellow:hover, .button-yellow-sm:hover {
+  background-color: #b7791f;
+}
+
+.button-red, .button-red-sm {
+  background-color: #f56565;
+}
+
+.button-red:hover, .button-red-sm:hover {
+  background-color: #c53030;
+}
+
+.button-black, .button-black-sm {
+  background-color: #2d3748;
+}
+
+.button-black:hover, .button-black-sm:hover {
+  background-color: #1a202c;
+}
+
+.button-gray, .button-gray-sm {
+  background-color: #a0aec0;
+}
+
+.button-gray:hover, .button-gray-sm:hover {
+  background-color: #4a5568;
+}
+
+.button-blue-sm, .button-green-sm,
+.button-yellow-sm, .button-red-sm,
+.button-black-sm, button-gray-sm {
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  border-radius: 0.25rem;
+  letter-spacing: 0.05em;
+}
+
+.button-blue-sm:focus, .button-green-sm:focus,
+.button-yellow-sm:focus, .button-red-sm:focus,
+.button-black-sm:focus, button-gray-sm:focus {
   outline: 0;
   box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
@@ -14264,7 +14332,6 @@ a:hover {
 }
 
 .forum-card {
-  background-color: #fff;
   border-radius: 0.25rem;
   border-width: 2px;
   border-color: #edf2f7;

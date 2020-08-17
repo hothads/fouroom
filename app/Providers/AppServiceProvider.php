@@ -41,6 +41,9 @@ class AppServiceProvider extends ServiceProvider
 
         });
 
+//        send variable to all views but after the view is loaded
+//        \View::share('channels', Channel::all());
+
         Validator::extend('spamfree', 'App\Rules\SpamFree@passes');
 
 
@@ -51,7 +54,6 @@ class AppServiceProvider extends ServiceProvider
         // });
 
 
-        //send variable to all views but after the view is loaded
-        // \View::share('channels', Channel::all());
+
     }
 }

@@ -1,10 +1,58 @@
-.button-blue {
-    @apply .bg-blue-500 text-white font-bold py-2 px-4 rounded mb-6;
+.button-blue, .button-green,
+.button-yellow, .button-red,
+.button-black, .button-gray {
+    @apply .text-white .font-bold .py-2 .px-4 .rounded .mb-6;
+    &:focus {
+        @apply .outline-none .shadow-outline;
+    }
+}
 
+.button-blue, .button-blue-sm {
+    @apply .bg-blue-500;
     &:hover {
         @apply .bg-blue-700;
     }
+}
 
+.button-green, .button-green-sm {
+    @apply .bg-green-500;
+    &:hover {
+        @apply .bg-green-700;
+    }
+}
+
+.button-yellow, .button-yellow-sm {
+    @apply .bg-yellow-500;
+    &:hover {
+        @apply .bg-yellow-700;
+    }
+}
+
+.button-red, .button-red-sm {
+    @apply .bg-red-500;
+    &:hover {
+        @apply .bg-red-700;
+    }
+}
+
+.button-black, .button-black-sm {
+    @apply .bg-gray-800;
+    &:hover {
+        @apply .bg-gray-900;
+    }
+}
+
+.button-gray, .button-gray-sm {
+    @apply .bg-gray-500;
+    &:hover {
+        @apply .bg-gray-700;
+    }
+}
+
+.button-blue-sm, .button-green-sm,
+.button-yellow-sm, .button-red-sm,
+.button-black-sm, button-gray-sm {
+    @apply .text-white .text-xs .font-bold .py-1 .px-3 .rounded .tracking-wider;
     &:focus {
         @apply .outline-none .shadow-outline;
     }
