@@ -49,5 +49,5 @@
     </div>
 
 @empty
-    no threads
+    Нет записей
 @endforelse

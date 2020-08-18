@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <thread-view :initial-replies-count="{{ $thread->replies_count }}" inline-template>
+    <thread-view :thread="{{ $thread }}" inline-template>
 
         <div class="container mx-auto flex py-6">
             <div class="w-2/3">
@@ -61,7 +61,9 @@
                             </p>
                             <p v-text>Опубликовано: {{$thread->created_at->diffForHumans()}}</p>
                             <p>Комментариев: <span v-text="repliesCount"></span></p>
-                            <subscribe-button :active="{{ json_encode($thread->isSubscribedTo) }}"></subscribe-button>
+                            <subscribe-button :active="{{ json_encode($thread->isSubscribedTo) }}" v-if="signedIn">
+                            </subscribe-button>
+                            <button class="button-red" v-if="authorize('isAdmin')" @click="toggleLock" v-text="locked ? 'Открыть комментарии' : 'Закрыть комментарии'"></button>
                         </div>
                     </div>
                 </div>

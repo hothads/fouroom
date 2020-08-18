@@ -30,13 +30,20 @@ $factory->define(User::class, function (Faker $faker) {
     ];
 });
 
+$factory->state(User::class, 'administrator', function() {
+   return [
+       'name'=>'santa'
+   ] ;
+});
+
 
 $factory->define(Thread::class, function (Faker $faker){
     return [
         'user_id'=> factory(User::class),
         'channel_id'=>factory(Channel::class),
         'title' =>$faker->sentence,
-        'body' =>$faker->paragraph
+        'body' =>$faker->paragraph,
+        'locked'=>false
     ];
 });
 

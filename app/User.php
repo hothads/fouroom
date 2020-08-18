@@ -79,4 +79,10 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $avatar ?:'avatars/default.jpg';
     }
+
+    public function isAdmin()
+    {
+        return in_array($this->name, ['Mihail', 'santa']);
+    }
+
 }

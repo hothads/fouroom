@@ -103,7 +103,7 @@ class ThreadTest extends TestCase
 
         $thread = factory('App\Thread')->create();
 
-        tap(auth()->user(), function($user) use ($thread){
+        tap(auth()->user(), function ($user) use ($thread) {
 
             $this->assertTrue($thread->hasUpdatesFor(auth()->user()));
 
@@ -131,5 +131,6 @@ class ThreadTest extends TestCase
         $this->assertEquals(2, $thread->visits()->count());
 
     }
+
 
 }

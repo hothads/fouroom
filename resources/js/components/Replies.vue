@@ -6,7 +6,9 @@
 
         <paginator :dataSet="dataSet" @changed="fetch"></paginator>
 
-        <new-reply @created="add"></new-reply>
+        <p v-if="$parent.locked">Данный пост закрыт, вы больше не можете добавлять комментарии</p>
+
+        <new-reply @created="add" v-else></new-reply>
     </div>
 </template>
 

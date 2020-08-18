@@ -1,4 +1,7 @@
-let user = window.App.user;
+let user = window.App.user ? window.App.user : 'guest';
+// let user = window.App.user;
+
+
 
 module.exports = {
     updateReply (reply) {
@@ -11,6 +14,10 @@ module.exports = {
 
     owns(model, prop = 'user_id') {
         return model[prop] === user.id;
+    },
+
+    isAdmin () {
+        return ['Mihail', 'santa'].includes(user.name);
     }
 }
 

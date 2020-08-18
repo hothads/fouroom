@@ -107,4 +107,5 @@ class ThreadsTest extends TestCase
         $thread->unsubscribe($userId);
         $this->assertCount(0, $thread->subscriptions);
     }
+
 }
