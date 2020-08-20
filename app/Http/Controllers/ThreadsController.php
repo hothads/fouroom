@@ -27,7 +27,6 @@ class ThreadsController extends Controller
      */
     public function index(Channel $channel, ThreadFilters $filters, Trending $trending)
     {
-
         $threads = $this->getThreads($channel, $filters);
 
         if (request()->wantsJson())
@@ -57,7 +56,7 @@ class ThreadsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
 
         request()->validate([
@@ -73,7 +72,9 @@ class ThreadsController extends Controller
             'body'=>request('body')
         ]);
 
-
+        if(request()->wantsJson()) {
+            return response($thread, 201);
+        }
 
         return redirect($thread->path())
                 ->with('flash', 'Ваш пост опубликован');
@@ -120,8 +121,6 @@ class ThreadsController extends Controller
     {
         $this->authorize('update', $thread);
 
-
-
         $thread->delete();
 
         if (request()->wantsJson()){
@@ -130,6 +129,20 @@ class ThreadsController extends Controller
 
         return redirect('/threads');
 
+    }
+
+    public function update($channel, Thread $thread)
+    {
+        $this->authorize('update', $thread);
+
+        $data = request()->validate([
+            'title' => ['required', new SpamFree()],
+            'body' => ['required', new SpamFree()],
+        ]);
+
+        $thread->update($data);
+
+        return $thread;
     }
 
     protected function getThreads(Channel $channel, ThreadFilters $filters)

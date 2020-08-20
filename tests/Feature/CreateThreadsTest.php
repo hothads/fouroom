@@ -107,6 +107,32 @@ class CreateThreadsTest extends TestCase
 
     }
 
+    /** @test */
+    public function only_the_owner_can_update_the_thread()
+    {
+        $this->signIn();
+        $thread = factory(Thread::class)->create();
+        $this->patch($thread->path(), [
+            'title'=>'changed'
+        ])->assertStatus(403);
+
+        $this->assertNotEquals('changed', $thread->title);
+    }
+
+    /** @test */
+    public function a_thread_can_be_updated()
+    {
+        $this->signIn();
+        $thread = factory(Thread::class)->create(['user_id'=>auth()->id()]);
+        $this->patch($thread->path(), [
+            'title'=>'changed',
+            'body'=>'changed body'
+        ]);
+
+        $this->assertEquals('changed', $thread->fresh()->title);
+        $this->assertEquals('changed body', $thread->fresh()->body);
+    }
+
 
     public function publishThread($overrides = [])
     {

@@ -3795,13 +3795,36 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       repliesCount: this.thread.replies_count,
-      locked: this.thread.locked
+      locked: this.thread.locked,
+      editing: false,
+      form: {
+        title: this.thread.title,
+        body: this.thread.body
+      }
     };
   },
   methods: {
     toggleLock: function toggleLock() {
       axios[this.locked ? 'delete' : 'post']('/locked-threads/' + this.thread.id);
       this.locked = !this.locked;
+    },
+    update: function update() {
+      var _this = this;
+
+      axios.patch('/threads/' + this.thread.channel.slug + '/' + this.thread.id, {
+        title: this.form.title,
+        body: this.form.body
+      }).then(function () {
+        _this.editing = false;
+        flash('Пост успешно обновлен');
+      });
+    },
+    cancel: function cancel() {
+      this.form = {
+        title: this.thread.title,
+        body: this.thread.body
+      };
+      this.editing = false;
     }
   }
 });

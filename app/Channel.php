@@ -7,6 +7,8 @@ use App\Thread;
 
 class Channel extends Model
 {
+    protected $guarded=[];
+    
     public function getRouteKeyName()
     {
     	return 'slug';

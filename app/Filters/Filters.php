@@ -19,7 +19,7 @@ abstract class Filters
 
 // to apply a user by name
 	public function apply($builder)
-	{        
+	{
 
 		$this->builder = $builder;
 
@@ -28,7 +28,7 @@ abstract class Filters
 			if (method_exists($this, $filter))
 			{
 				$this->$filter($this->request->$filter);
-			}			
+			}
 		}
 
 		return $this->builder;

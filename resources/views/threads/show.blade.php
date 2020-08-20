@@ -10,37 +10,7 @@
 
         <div class="container mx-auto flex py-6">
             <div class="w-2/3">
-                <div class="forum-card">
-                    <div class="forum-header">
-                        <div class="flex justify-start items-center">
-                            <img class="rounded-full mr-3" src="/storage/{{ $thread->creator->avatar_path }}"
-                                 alt="{{$thread->creator->name}}" width="50" >
-
-                            <h2>
-                                <a href="{{ route('profile', $thread->creator) }}">{{$thread->creator->name}}</a>
-                                said {{ $thread->title }}
-                            </h2>
-                        </div>
-                        @can('update', $thread)
-                            <div class="flex items-center">
-                                <form method="POST" action="{{$thread->path()}}">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button
-                                        class="text-xs bg-red-600 text-white font-semibold tracking-widest border border-red-700 hover:bg-black hover:border-black px-3 rounded py-1"
-                                        type="submit">X
-                                    </button>
-                                </form>
-                            </div>
-                        @endcan
-
-                    </div>
-
-                    <div class="forum-body">
-                        <article>{!! $thread->body !!}</article>
-                    </div>
-
-                </div>
+                @include('threads._question')
 
 
                 <div>
