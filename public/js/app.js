@@ -8455,11 +8455,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['message'],
   data: function data() {
     return {
-      body: '',
+      body: this.message,
       level: 'success',
       show: false
     };
@@ -8468,26 +8471,29 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     if (this.message) {
-      this.flash(this.message);
+      this.flash();
     }
 
     window.events.$on('flash', function (data) {
-      _this.flash(data);
+      return _this.flash(data);
     });
   },
   methods: {
+    flash: function flash(data) {
+      if (data) {
+        this.body = data.message;
+        this.level = data.level;
+      }
+
+      this.show = true;
+      this.hide();
+    },
     hide: function hide() {
       var _this2 = this;
 
       setTimeout(function () {
         _this2.show = false;
       }, 3000);
-    },
-    flash: function flash(data) {
-      this.body = data.message;
-      this.level = data.level;
-      this.show = true;
-      this.hide();
     }
   }
 });
@@ -13678,7 +13684,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".alert-success{\n  background: #2f855a;\n}\n.alert-danger{\n  background: red;\n}\n", ""]);
+exports.push([module.i, ".alert-success{\n  background: #acffd5;\n  color:#2f855a;\n  font-weight: bold;\n}\n.alert-danger{\n  background: red;\n  color:white;\n  font-weight: bold;\n}\n", ""]);
 
 // exports
 
@@ -99948,11 +99954,6 @@ module.exports = function(module) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_instantsearch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-instantsearch */ "./node_modules/vue-instantsearch/dist/vue-instantsearch.esm.js");
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -99974,15 +99975,7 @@ window.Vue.prototype.authorize = function () {
   return params[0](window.App.user);
 };
 
-window.Vue.prototype.signedIn = window.App.signedIn;
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
+window.Vue.prototype.signedIn = window.App.signedIn; // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
 Vue.component('flash', __webpack_require__(/*! ./components/Flash.vue */ "./resources/js/components/Flash.vue")["default"]);
