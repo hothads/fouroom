@@ -8,11 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Visits;
 use App\Reply;
 use App\User;
+use Laravel\Scout\Searchable;
 
 class Thread extends Model
 {
 
-    use RecordsActivity;
+    use RecordsActivity, Searchable;
 
     protected $guarded = [];
 
@@ -116,6 +117,12 @@ class Thread extends Model
     public function markBestReply(Reply $reply)
     {
         $this->update(['best_reply_id' => $reply->id]);
+    }
+
+    public function toSearchableArray()
+    {
+//        return ['title' => $this->title];
+        return $this->toArray() + ['path' => $this->path(), 'visits' => $this->visits()->count()];
     }
 
 }

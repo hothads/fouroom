@@ -7,18 +7,13 @@
 @section('content')
 
     <thread-view :thread="{{ $thread }}" inline-template>
-
         <div class="container mx-auto flex py-6">
             <div class="w-2/3">
                 @include('threads._question')
-
-
                 <div>
                     <replies @removed="repliesCount--" @added="repliesCount++"></replies>
                 </div>
-
             </div>
-
 
             <!-- second column -->
 

@@ -19,3 +19,40 @@
 .is-invalid {
     @apply .border .border-red-500;
 }
+
+.ais-SearchBox {
+    @apply .w-full;
+}
+
+.ais-SearchBox-form {
+    @apply .flex .w-full .relative;
+}
+
+.ais-SearchBox-input {
+    @apply .border .border-blue-300 .rounded .w-full .px-3 .py-2;
+}
+
+.ais-SearchBox-submitIcon {
+    @apply .hidden;
+}
+
+.ais-SearchBox-resetIcon {
+    @apply .absolute .right-0 .bottom-0 .flex .items-center .mr-3;
+    height: 42px;
+    width: 10px;
+}
+
+.ais-RefinementList-list {
+    @apply .bg-white .p-6 .rounded text-gray-700 .shadow;
+}
+
+.ais-RefinementList-item {
+    @apply .pb-2;
+    &:last-child {
+        @apply .pb-0;
+    }
+}
+
+.ais-RefinementList-checkbox {
+    @apply .mr-2;
+}

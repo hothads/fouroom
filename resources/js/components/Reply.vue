@@ -27,7 +27,7 @@
         </div>
 
 
-        <div class="flex bg-gray-300 p-3 flex items-center justify-between"
+        <div class="flex px-3 pb-3 flex items-center justify-between"
              v-if="authorize('updateReply', reply) || authorize('updateThread', reply.thread)" >
 
            <div v-if="authorize('updateReply', reply)">

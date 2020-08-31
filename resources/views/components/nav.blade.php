@@ -1,21 +1,22 @@
 <div class="bg-white border-b">
 <div class="container mx-auto">
 <nav class="flex items-center">
-    <div class="text-lg w-1/6 tracking-widest text-gray-700 font-semibold py-4 px-6 mr-6">
-        Forum test
+    <div class="text-lg tracking-widest text-gray-700">
+        <img class="p-3" src="/images/logo.svg" alt="">
     </div>
 
     <div class="flex w-full justify-between">
         <ul class="topmenu">
-            <li><a href="#">Рубрики</a>
-                <ul class="submenu">
+            <li><a href="/threads">Главная</a>
+            <li><a href="#">Разделы</a>
+                <ul class="submenu-left">
                     @foreach($channels as $channel)
                     <li><a href="/threads/{{$channel->slug}}">{{$channel->slug}}</a></li>
                     @endforeach
                 </ul>
             </li>
             <li><a href="#">Обсуждения</a>
-                <ul class="submenu">
+                <ul class="submenu-left">
                     <li><a href="/threads">Все</a></li>
                     <li><a href="/threads?popular=1">Популярные</a></li>
                     <li><a href="/threads?unanswered=1">Не отвеченные</a></li>
@@ -25,6 +26,7 @@
                     @endif
                 </ul>
             </li>
+            <li><a href="#"></a>
         </ul>
 
         @guest
@@ -41,8 +43,8 @@
         <ul class="topmenu">
             <user-notifications></user-notifications>
             <li class="cursor-pointer">{{ Auth::user()->name }}
-                <ul class="submenu">
-                    <li><a href="{{ route('profile', auth()->user()) }}">Личный кабинет</a></li>
+                <ul class="submenu-right">
+                    <li><a href="{{ route('profile', auth()->user()) }}">История активности</a></li>
                     <li>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"

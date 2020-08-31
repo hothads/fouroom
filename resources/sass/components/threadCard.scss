@@ -1,0 +1,45 @@
+//card
+.forum-card {
+    @apply .rounded-lg .border-2 .mb-6;
+    background-color: #1072a4;
+    border-color:#1072a4;
+}
+
+.forum-header {
+    @apply .px-5 .py-3 .text-lg .flex .justify-between;
+
+    h2 > a {
+        @apply .text-blue-200 .tracking-wide .font-bold;
+    }
+}
+
+.forum-header-title {
+    @apply .text-blue-200 .tracking-wide .font-bold;
+}
+
+.forum-icons {
+    @apply .flex .text-gray-800 .text-sm;
+}
+
+.forum-icon {
+    @apply .flex .items-center .ml-6 .text-white font-bold;
+    svg {
+        @apply .mr-2 .w-4 .fill-current;
+    }
+}
+
+.forum-body {
+    @apply .px-5 .py-3 .rounded-lg .bg-white .border-2 .border-blue-800 mx-3 mb-3;
+
+    a {
+        color: #1072a4;
+    }
+
+    article {
+        @apply .mb-2;
+    }
+
+    h5 {
+        @apply .text-xs;
+    }
+}
