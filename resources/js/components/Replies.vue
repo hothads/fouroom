@@ -21,7 +21,6 @@
     export default {
 
         components:{NewReply, Reply },
-
         mixins: [collection],
 
         data() {

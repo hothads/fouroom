@@ -8417,7 +8417,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     classes: function classes() {
-      return [this.active ? 'text-blue-700' : ''];
+      return [this.active ? 'text-blue-200' : ''];
     }
   },
   methods: {
@@ -8850,6 +8850,48 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -8863,6 +8905,7 @@ __webpack_require__.r(__webpack_exports__);
       editing: false,
       id: this.reply.id,
       body: this.reply.body,
+      avatar: this.reply.owner.avatar_path,
       isBest: this.reply.isBest
     };
   },
@@ -78044,7 +78087,11 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "button",
-    { staticClass: "flex", class: _vm.classes, attrs: { type: "submit" } },
+    {
+      staticClass: "flex items-center text-white",
+      class: _vm.classes,
+      attrs: { type: "submit" }
+    },
     [
       _c(
         "svg",
@@ -78418,23 +78465,152 @@ var render = function() {
   return _c(
     "div",
     {
-      staticClass: "forum-card",
-      class: _vm.isBest ? "bg-blue-100" : "bg-white",
+      staticClass: "is-best-reply",
+      class: _vm.isBest ? "bg-blue-400" : "bg-point",
       attrs: { id: "reply-" + _vm.id }
     },
     [
       _c("div", { staticClass: "forum-header" }, [
-        _c("h2", [
-          _c("a", {
-            attrs: { href: "/profiles/" + _vm.reply.owner.name },
-            domProps: { textContent: _vm._s(_vm.reply.owner.name) }
-          }),
-          _vm._v("\n            said "),
-          _c("span", { domProps: { textContent: _vm._s(_vm.ago) } })
+        _c("div", { staticClass: "flex items-center w-full" }, [
+          _c("div", { staticClass: "flex items-center w-full" }, [
+            _c(
+              "a",
+              {
+                staticClass: "mr-4 flex-shrink-0",
+                attrs: { href: "/profiles/" + _vm.reply.owner.name }
+              },
+              [
+                _c("img", {
+                  staticClass: "rounded-full shadow",
+                  attrs: { src: "/storage/" + _vm.avatar, alt: "", width: "50" }
+                })
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "text-sm" }, [
+              _c("div", { staticClass: "font-bold text-white" }, [
+                _c("a", {
+                  attrs: { href: "/profiles/" + _vm.reply.owner.name },
+                  domProps: { textContent: _vm._s(_vm.reply.owner.name) }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "text-white",
+                domProps: { textContent: _vm._s(_vm.ago) }
+              })
+            ]),
+            _vm._v(" "),
+            _vm.authorize("updateReply", _vm.reply)
+              ? _c("div", { staticClass: "flex items-center mx-6" }, [
+                  !_vm.editing
+                    ? _c(
+                        "button",
+                        {
+                          staticClass: "flex items-center text-white mr-3",
+                          on: {
+                            click: function($event) {
+                              _vm.editing = true
+                            }
+                          }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "w-5",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                stroke: "currentColor"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "stroke-width": "2",
+                                  d:
+                                    "M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.authorize("updateThread", _vm.reply.thread)
+                    ? _c(
+                        "button",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: !_vm.isBest,
+                              expression: "!isBest"
+                            }
+                          ],
+                          staticClass: "flex text-white items-center",
+                          on: { click: _vm.markBestReply }
+                        },
+                        [
+                          _c(
+                            "svg",
+                            {
+                              staticClass: "w-5",
+                              attrs: {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                stroke: "currentColor"
+                              }
+                            },
+                            [
+                              _c("path", {
+                                attrs: {
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "stroke-width": "2",
+                                  d:
+                                    "M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+                                }
+                              })
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ])
+              : _vm._e(),
+            _vm._v(" "),
+            _vm.isBest
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      "flex ml-auto mr-6 border-point border-2 flex-grow-0 px-6 py-1 text-sm text-point bg-white text-red font-bold rounded-full"
+                  },
+                  [
+                    _vm._v(
+                      "\n                        Лучший ответ\n                    "
+                    )
+                  ]
+                )
+              : _vm._e()
+          ])
         ]),
         _vm._v(" "),
         _vm.signedIn
-          ? _c("div", [_c("favorite", { attrs: { reply: _vm.reply } })], 1)
+          ? _c(
+              "div",
+              { staticClass: "flex" },
+              [_c("favorite", { attrs: { reply: _vm.reply } })],
+              1
+            )
           : _vm._e()
       ]),
       _vm._v(" "),
@@ -78472,7 +78648,7 @@ var render = function() {
                         "text-xs rounded bg-blue-700 text-white px-2 py-1 mr-2",
                       attrs: { type: "submit" }
                     },
-                    [_vm._v("Обновить\n                    ")]
+                    [_vm._v("Обновить\n                        ")]
                   ),
                   _vm._v(" "),
                   _c(
@@ -78486,71 +78662,26 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("Отменить")]
+                    [
+                      _vm._v(
+                        "\n                            Отменить\n                        "
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "button",
+                    {
+                      staticClass: "button-red-sm",
+                      on: { click: _vm.destroy }
+                    },
+                    [_vm._v("Удалить комментарий\n                        ")]
                   )
                 ])
               ])
             ])
           : _c("article", { domProps: { innerHTML: _vm._s(_vm.body) } })
-      ]),
-      _vm._v(" "),
-      _vm.authorize("updateReply", _vm.reply) ||
-      _vm.authorize("updateThread", _vm.reply.thread)
-        ? _c(
-            "div",
-            { staticClass: "flex px-3 pb-3 flex items-center justify-between" },
-            [
-              _vm.authorize("updateReply", _vm.reply)
-                ? _c("div", [
-                    _c(
-                      "button",
-                      {
-                        staticClass: "button-black-sm mr-3",
-                        on: {
-                          click: function($event) {
-                            _vm.editing = true
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "Редактировать\n               комментарий\n           "
-                        )
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticClass: "button-red-sm",
-                        on: { click: _vm.destroy }
-                      },
-                      [_vm._v("Удалить комментарий\n           ")]
-                    )
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.authorize("updateThread", _vm.reply.thread)
-                ? _c(
-                    "button",
-                    {
-                      directives: [
-                        {
-                          name: "show",
-                          rawName: "v-show",
-                          value: !_vm.isBest,
-                          expression: "!isBest"
-                        }
-                      ],
-                      staticClass: "button-blue-sm",
-                      on: { click: _vm.markBestReply }
-                    },
-                    [_vm._v("Лучший ответ?\n        ")]
-                  )
-                : _vm._e()
-            ]
-          )
-        : _vm._e()
+      ])
     ]
   )
 }

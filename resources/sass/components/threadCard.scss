@@ -1,6 +1,10 @@
 //card
-.forum-card {
+.forum-card, .is-best-reply {
     @apply .rounded-lg .border-2 .mb-6;
+
+}
+
+.forum-card {
     background-color: #1072a4;
     border-color:#1072a4;
 }

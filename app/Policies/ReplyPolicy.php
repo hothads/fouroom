@@ -22,16 +22,14 @@ class ReplyPolicy
 
     public function update(User $user, Reply $reply)
     {
-        return $reply->user_id ==   $user->id;
+//        return $reply->user_id == $user->id || $reply->thread->creator->id == $user->id;
+        return $reply->user_id == $user->id;
     }
 
     public function create(User $user)
     {
-
         if ( ! $lastReply = $user->fresh()->lastReply) return true;
-
 //        if(! $lastReply) return true;
-
         return ! $lastReply->wasJustAdded();
     }
 }

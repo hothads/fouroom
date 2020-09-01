@@ -33,6 +33,18 @@ a {
     }
 }
 
+.bg-point {
+    background-color: #1072a4;
+}
+
+.text-point {
+    color: #1072a4;
+}
+
+.border-point {
+ border-color: #1072a4;
+}
+
 .pagination {
     @apply .flex .mb-6 .p-0 ;
 

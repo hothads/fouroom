@@ -7,9 +7,10 @@
         <div class="flex items-center justify-between py-6 mb-6">
 
             <form class="flex w-full items-center" action="/threads/search" method="GET">
-                <input class=" border border-blue-300 rounded w-full px-3 py-2" type="text"
-                       placeholder="Что будем искать?" name="q">
-{{--                <button class="button-blue ml-1" type="submit" style="margin-bottom: 0;">ок</button>--}}
+                <input class=" border border-blue-300 rounded w-full px-3 py-2"
+                       type="text"
+                       placeholder="Что будем искать?"
+                       name="q">
             </form>
 
         </div>

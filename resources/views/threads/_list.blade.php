@@ -2,17 +2,23 @@
 
     <div class="forum-card">
         <div class="forum-header">
+            <div class="flex justify-start items-center">
 
-            <h2>
-                <a href="{{ $thread->path() }}">
-                    @if(auth()->check() && $thread->hasUpdatesFor(auth()->user()))
-                        <span class="text-white">{{ $thread->title }}</span>
-                    @else
-                        {{ $thread->title }}
-                    @endif
+                <a class="mr-4 flex-shrink-0" href="{{ route('profile', $thread->creator) }}">
+                    <img class="rounded-full shadow" src="/storage/{{ $thread->creator->avatar_path }}"
+                         alt="{{$thread->creator->name}}" width="50">
                 </a>
-            </h2>
 
+                <h2>
+                    <a href="{{ $thread->path() }}">
+                        @if(auth()->check() && $thread->hasUpdatesFor(auth()->user()))
+                            <span class="text-white">{{ $thread->title }}</span>
+                        @else
+                            {{ $thread->title }}
+                        @endif
+                    </a>
+                </h2>
+            </div>
             <div class="forum-icons">
 
                 <div class="forum-icon">

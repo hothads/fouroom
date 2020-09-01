@@ -14359,10 +14359,13 @@ video {
   margin-right: 0.5rem;
 }
 
-.forum-card {
+.forum-card, .is-best-reply {
   border-radius: 0.5rem;
   border-width: 2px;
   margin-bottom: 1.5rem;
+}
+
+.forum-card {
   background-color: #1072a4;
   border-color: #1072a4;
 }
@@ -14450,6 +14453,18 @@ a {
 a:hover {
   color: #f56565;
   transition: 0.2s ease-in-out;
+}
+
+.bg-point {
+  background-color: #1072a4;
+}
+
+.text-point {
+  color: #1072a4;
+}
+
+.border-point {
+  border-color: #1072a4;
 }
 
 .pagination {
