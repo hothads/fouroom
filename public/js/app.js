@@ -8348,6 +8348,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['user'],
@@ -78044,23 +78055,67 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { domProps: { textContent: _vm._s(_vm.user.name) } }),
-    _vm._v(" "),
     _vm.canUpdate
       ? _c(
           "form",
-          { attrs: { method: "POST", enctype: "multipart/form-data" } },
+          {
+            staticClass: "flex",
+            attrs: { method: "POST", enctype: "multipart/form-data" }
+          },
           [
+            _c(
+              "label",
+              { staticClass: "relative", attrs: { for: "photoupload" } },
+              [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "absolute top-0 left-0 z-20 text-white ml-12 mt-12"
+                  },
+                  [
+                    _c(
+                      "svg",
+                      {
+                        attrs: {
+                          width: "30",
+                          height: "30",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          fill: "none",
+                          viewBox: "0 0 24 24",
+                          stroke: "currentColor"
+                        }
+                      },
+                      [
+                        _c("path", {
+                          attrs: {
+                            "stroke-linecap": "round",
+                            "stroke-linejoin": "round",
+                            "stroke-width": "2",
+                            d:
+                              "M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                          }
+                        })
+                      ]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "rounded-full z-10 w-32",
+                  attrs: { src: _vm.avatar, alt: _vm.user.name }
+                })
+              ]
+            ),
+            _vm._v(" "),
             _c("image-upload", {
-              attrs: { name: "avatar" },
+              attrs: { id: "photoupload", name: "avatar" },
               on: { loaded: _vm.onLoad }
             })
           ],
           1
         )
-      : _vm._e(),
-    _vm._v(" "),
-    _c("img", { attrs: { src: _vm.avatar, alt: _vm.user.name, width: "50" } })
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -78179,7 +78234,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("input", {
-    attrs: { type: "file", accept: "image/*" },
+    staticClass: "hidden",
+    attrs: { id: "photoupload", type: "file", accept: "image/*" },
     on: { change: _vm.onChange }
   })
 }

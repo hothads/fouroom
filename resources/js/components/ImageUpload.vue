@@ -1,5 +1,5 @@
 <template>
-            <input type="file" accept="image/*" @change="onChange">
+    <input class="hidden" id="photoupload" type="file" accept="image/*" @change="onChange">
 </template>
 
 <script>
@@ -25,5 +25,6 @@
 </script>
 
 <style scoped>
+
 
 </style>

@@ -34,16 +34,14 @@
   <component name="ChangeListManager">
     <list default="true" id="187f5823-2b8c-4ce5-be74-2d5e22af26d3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/ReplyPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ReplyPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Favorite.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Favorite.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Replies.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Replies.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Reply.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Reply.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/components/threadCard.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/components/threadCard.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/threads/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/threads/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AvatarForm.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AvatarForm.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/ImageUpload.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ImageUpload.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profiles/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/test.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/test.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +269,13 @@
       <workItem from="1598597799758" duration="62000" />
       <workItem from="1598598166442" duration="2329000" />
       <workItem from="1598860781811" duration="12058000" />
-      <workItem from="1598945824537" duration="5290000" />
+      <workItem from="1598945824537" duration="11975000" />
+      <workItem from="1598970060892" duration="550000" />
+      <workItem from="1598983383791" duration="4674000" />
+      <workItem from="1599031279380" duration="661000" />
+      <workItem from="1599216325513" duration="1866000" />
+      <workItem from="1599235049935" duration="626000" />
+      <workItem from="1600093081248" duration="61000" />
     </task>
     <servers />
   </component>
@@ -324,10 +328,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="731" y="235" width="440" height="539" key="#com.jetbrains.php.refactoring.pullPush.pullUp.PhpPullUpDialog#1/72.27.1848.1053@72.27.1848.1053" timestamp="1593160716021" />
-    <state x="687" y="240" width="424" height="520" key="FileChooserDialogImpl" timestamp="1598601214662">
+    <state x="687" y="240" width="424" height="520" key="FileChooserDialogImpl" timestamp="1599031650313">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="687" y="240" width="424" height="520" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1598601214662" />
+    <state x="687" y="240" width="424" height="520" key="FileChooserDialogImpl/0.27.1920.1053@0.27.1920.1053" timestamp="1599031650313" />
     <state x="733" y="240" width="424" height="520" key="FileChooserDialogImpl/72.27.1848.1053@72.27.1848.1053" timestamp="1591347821324" />
     <state width="1802" height="369" key="GridCell.Tab.0.bottom" timestamp="1593167321797">
       <screen x="72" y="27" width="1848" height="1053" />
@@ -378,10 +382,10 @@
       <screen x="72" y="27" width="1848" height="1053" />
     </state>
     <state x="583" y="266" key="run.anything.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1592389208418" />
-    <state x="566" y="306" width="841" height="867" key="search.everywhere.popup" timestamp="1598949899455">
+    <state x="566" y="306" width="841" height="867" key="search.everywhere.popup" timestamp="1599031563702">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="566" y="306" width="841" height="867" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1598949899455" />
+    <state x="566" y="306" width="841" height="867" key="search.everywhere.popup/0.27.1920.1053@0.27.1920.1053" timestamp="1599031563702" />
     <state x="617" y="306" width="809" height="867" key="search.everywhere.popup/72.27.1848.1053@72.27.1848.1053" timestamp="1593786183017" />
   </component>
 </project>

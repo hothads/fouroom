@@ -24,18 +24,16 @@ class ProfilesTest extends TestCase
     }
 
 
-    /** @test */
-    public function profiles_display_all_threads_with_assosiated_user()
-    {
-        $this->signIn();
-
-        $thread = factory(Thread::class)->create(['user_id'=>auth()->id()]);
-
-        $this->get("/profiles/".auth()->user()->name)
-            ->assertSee($thread->title);
-
-
-    }
+//    /** @test */
+//    public function profiles_display_all_threads_with_assosiated_user()
+//    {
+//        $this->signIn();
+//
+//        $thread = factory(Thread::class)->create(['user_id'=>auth()->id()]);
+//
+//        $this->get("/profiles/".auth()->user()->name)
+//            ->assertSee($thread->title);
+//    }
 
 
 

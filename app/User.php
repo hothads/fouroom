@@ -85,4 +85,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return in_array($this->name, ['Mihail', 'santa']);
     }
 
+    public function profilePath() {
+        return '/profiles/' . $this->name;
+    }
+
 }

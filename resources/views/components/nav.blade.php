@@ -44,7 +44,7 @@
             <user-notifications></user-notifications>
             <li class="cursor-pointer">{{ Auth::user()->name }}
                 <ul class="submenu-right">
-                    <li><a href="{{ route('profile', auth()->user()) }}">История активности</a></li>
+                    <li><a href="{{ route('profile', auth()->user()) }}">Личный кабинет</a></li>
                     <li>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"
