@@ -8966,7 +8966,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! algoliasearch/lite */ "./node_modules/algoliasearch/dist/algoliasearch-lite.umd.js");
+/* WEBPACK VAR INJECTION */(function(process) {/* harmony import */ var algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! algoliasearch/lite */ "./node_modules/algoliasearch/dist/algoliasearch-lite.umd.js");
 /* harmony import */ var algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
@@ -9046,11 +9046,12 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       searchQuery: this.value,
-      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default()("CB7TGM109A", "78bdeb4a059b677dee497d3a350a698f")
+      searchClient: algoliasearch_lite__WEBPACK_IMPORTED_MODULE_0___default()(process.env.MIX_ALGOLIA_APP_ID, process.env.MIX_ALGOLIA_SEARCH)
     };
   },
   props: ['value']
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../node_modules/process/browser.js */ "./node_modules/process/browser.js")))
 
 /***/ }),
 
@@ -101196,8 +101197,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/mihail/code/laravel/fouroom/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/mihail/code/laravel/fouroom/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/bender/code/fouroom/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/bender/code/fouroom/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -136,6 +136,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'email' => [
+            'email' => 'Не соответствует формау email адреса'
+        ]
     ],
 
     /*

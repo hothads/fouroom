@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\Emails;
 use App\User;
 use App\Thread;
 use App\Reply;
@@ -74,5 +75,15 @@ $factory->define(\Illuminate\Notifications\DatabaseNotification::class, function
         },
         'notifiable_type' => 'App\User',
         'data' => ['foo' => 'bar']
+    ];
+});
+
+
+$factory->define(Emails::class, function (Faker $faker){
+    return [
+        'email' => $faker->email,
+        'user_name'=> $faker->name,
+        'organisation'=>$faker->sentence(5),
+        'source'=>$faker->sentence(3)
     ];
 });

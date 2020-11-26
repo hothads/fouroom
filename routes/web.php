@@ -76,3 +76,15 @@ Route::post('api/users/{user}/avatar', 'Api\UserAvatarController@store')->middle
 Route::get('/test', function(){
     return view('test');
 });
+
+Route::get('/send', 'MailController@create');
+Route::post('/send', 'MailController@store');
+
+Route::get('/emails', 'EmailsController@index');
+Route::post('/emails', 'EmailsController@store');
+
+Route::get('/emails/{emails}', 'EmailsController@show');
+Route::patch('/emails/{emails}', 'EmailsController@update');
+
+Route::post('/import', 'EmailsController@import');
+Route::post('/check', 'EmailsController@validateExel');
