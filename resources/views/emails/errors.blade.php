@@ -11,7 +11,7 @@
 
         </div>
 
-       <a class="button-blue" href="/emails">Назад</a>
+       <a class="button-blue" href="/lists/{{$list->id}}/emails/create">Назад</a>
 
     </div>
 

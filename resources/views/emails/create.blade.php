@@ -11,14 +11,16 @@
 
                 <label for="country" class="block text-sm font-medium text-gray-700">Адреса получателей</label>
 
-                <select
+                <select name="lists"
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option>Школы</option>
-                    <option>Детский сады</option>
-                    <option>Директора школ</option>
+                   @forelse($lists as $list)
+                        <option value="{{$list->id}}">{{$list->title}}</option>
+                    @empty
+                        <option>Списков нет</option>
+                    @endforelse
                 </select>
 
-                <div class="text-sm mt-2"><a class="text-green-600 underline" href="#">Создать новый список адресов
+                <div class="text-sm mt-2"><a class="text-green-600 underline" href="/lists">Создать новый список адресов
                         получателей</a></div>
 
             </div>

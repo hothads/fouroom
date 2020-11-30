@@ -22,7 +22,7 @@
                 <input value="{{$email->source}}" type="text" name="source">
                 <div class="flex justify-between">
                     <button class="button-blue mt-12" type="submit">Сохранить</button>
-                    <a href="/emails" class="button-black mt-12 cursor-pointer">Назад</a>
+                    <a href="/lists/{{$email->emaillist->id}}/emails/create" class="button-black mt-12 cursor-pointer">Назад</a>
                 </div>
             </form>
         </div>

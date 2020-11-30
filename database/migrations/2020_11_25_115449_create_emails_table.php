@@ -15,12 +15,18 @@ class CreateEmailsTable extends Migration
     {
         Schema::create('emails', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('email')->unique();
+            $table->unsignedBigInteger('email_list_id');
+            $table->string('email');
             $table->string('user_name', 50)->nullable();
             $table->string('organisation', 255)->nullable();
             $table->string('source', 255)->nullable();
             $table->boolean('active')->default(true);
             $table->timestamps();
+
+            $table->foreign('email_list_id')
+                ->references('id')
+                ->on('email_lists')
+                ->onDelete('cascade');
         });
     }
 

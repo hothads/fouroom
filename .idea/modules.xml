@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/fouroom.iml" filepath="$PROJECT_DIR$/.idea/fouroom.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/sender.iml" filepath="$PROJECT_DIR$/.idea/sender.iml" />
     </modules>
   </component>
 </project>

@@ -89,4 +89,8 @@ class User extends Authenticatable implements MustVerifyEmail
         return '/profiles/' . $this->name;
     }
 
+    public function emaillists(){
+        return $this->hasMany(EmailList::class);
+    }
+
 }

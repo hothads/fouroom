@@ -7,26 +7,27 @@
 
     <div class="flex w-full justify-between">
         <ul class="topmenu">
-            <li><a href="/threads">Главная</a>
-            <li><a href="#">Разделы</a>
-                <ul class="submenu-left">
-                    @foreach($channels as $channel)
-                    <li><a href="/threads/{{$channel->slug}}">{{$channel->slug}}</a></li>
-                    @endforeach
-                </ul>
+            <li><a href="/emails">Главная</a>
+                <a href="/lists">Адреса</a>
+                <a href="/send">Рассылка</a>
+{{--            <li><a href="#">Разделы</a>--}}
+{{--                <ul class="submenu-left">--}}
+{{--                    @foreach($channels as $channel)--}}
+{{--                    <li><a href="/threads/{{$channel->slug}}">{{$channel->slug}}</a></li>--}}
+{{--                    @endforeach--}}
+{{--                </ul>--}}
+{{--            </li>--}}
+{{--            <li><a href="#">Обсуждения</a>--}}
+{{--                <ul class="submenu-left">--}}
+{{--                    <li><a href="/threads">Все</a></li>--}}
+{{--                    <li><a href="/threads?popular=1">Популярные</a></li>--}}
+{{--                    <li><a href="/threads?unanswered=1">Не отвеченные</a></li>--}}
+{{--                    @if(auth()->check())--}}
+{{--                    <li><a href="/threads?by={{auth()->user()->name}}">Мои</a></li>--}}
+{{--                    <li><a href="/threads/create">Добавить</a></li>--}}
+{{--                    @endif--}}
+{{--                </ul>--}}
             </li>
-            <li><a href="#">Обсуждения</a>
-                <ul class="submenu-left">
-                    <li><a href="/threads">Все</a></li>
-                    <li><a href="/threads?popular=1">Популярные</a></li>
-                    <li><a href="/threads?unanswered=1">Не отвеченные</a></li>
-                    @if(auth()->check())
-                    <li><a href="/threads?by={{auth()->user()->name}}">Мои</a></li>
-                    <li><a href="/threads/create">Добавить</a></li>
-                    @endif
-                </ul>
-            </li>
-            <li><a href="#"></a>
         </ul>
 
         @guest

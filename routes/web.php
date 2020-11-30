@@ -80,11 +80,20 @@ Route::get('/test', function(){
 Route::get('/send', 'MailController@create');
 Route::post('/send', 'MailController@store');
 
-Route::get('/emails', 'EmailsController@index');
-Route::post('/emails', 'EmailsController@store');
 
-Route::get('/emails/{emails}', 'EmailsController@show');
+Route::get('/emails/{emails}', 'EmailsController@edit');
 Route::patch('/emails/{emails}', 'EmailsController@update');
 
-Route::post('/import', 'EmailsController@import');
-Route::post('/check', 'EmailsController@validateExel');
+
+Route::get('/lists', 'EmailListController@index');
+Route::get('/lists/create', 'EmailListController@create')->middleware('auth');
+Route::post('/lists', 'EmailListController@store');
+Route::delete('/lists/{list}', 'EmailListController@destroy');
+
+
+Route::get('/lists/{list}/emails/create', 'EmailsController@create');
+Route::post('/lists/{list}/emails', 'EmailsController@store');
+Route::delete('/lists/{list}/emails/{email}', 'EmailsController@destroy');
+
+
+Route::post('/lists/{list}/emails/import', 'EmailsController@importExcel');
