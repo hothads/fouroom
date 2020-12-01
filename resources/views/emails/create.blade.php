@@ -7,42 +7,71 @@
         <form class="flex" method="POST" action="/send">
             @csrf
 
-            <div class="w-1/3 mr-24">
+            <div>
 
-                <label for="country" class="block text-sm font-medium text-gray-700 mt-6">Адреса получателей</label>
+                <div>
+                    <label for="country" class="block text-sm font-medium text-gray-700 mt-6">Адреса получателей</label>
 
-                <select name="lists"
-                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                    <option>Выберите получателей</option>
-                    @forelse($lists as $list)
-                        <option value="{{$list->id}}">{{$list->title}}</option>
-                    @empty
-                        <option>Списков нет</option>
-                    @endforelse
-                </select>
+                    <select name="list"
+                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Выберите получателей</option>
+                        @forelse($lists as $list)
+                            <option value="{{$list->id}}">{{$list->title}}</option>
+                        @empty
+                            <option>Списков нет</option>
+                        @endforelse
+                    </select>
 
-                <div class="text-sm mt-2"><a class="text-green-600 underline" href="/lists">Создать новый список адресов
-                        получателей</a></div>
+                    @error('list')
+                    <div class="text-sm text-red-500">{{$message}}</div>
+                    @enderror
 
-            </div>
+                    <div class="text-sm mt-2"><a class="text-green-600 underline" href="/lists">Создать новый список
+                            адресов
+                            получателей</a></div>
+                </div>
 
+                <div>
+                    <label for="country" class="block text-sm font-medium text-gray-700 mt-6">Шаблоны писем</label>
 
-            <div class="w-2/3 flex flex-col">
+                    <select name="template"
+                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Выберите шаблон письма</option>
+                        @forelse($templates as $template)
+                            <option value="{{$template->id}}">{{$template->title}}</option>
+                        @empty
+                            <option>Списков нет</option>
+                        @endforelse
+                    </select>
 
-                <label class="block text-sm font-medium text-gray-700 mt-6">
-                    Кому
-                </label>
+                    @error('template')
+                    <div class="text-sm text-red-500">{{$message}}</div>
+                    @enderror
 
-                <textarea
-                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    type="text"
-                    name="emails"
-                    rows="1"
-                    placeholder="Введите адрес получателя"></textarea>
+                    <div class="text-sm mt-2"><a class="text-green-600 underline" href="/templates/create">Создать новый
+                            шаблон</a></div>
+                </div>
 
-                @error('emails')
-                <div class="text-sm text-red-500">{{$message}}</div>
-                @enderror
+                <div>
+                    <label for="country" class="block text-sm font-medium text-gray-700 mt-6">Выбрать подпись</label>
+
+                    <select name="signature"
+                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="">Выберите подпись</option>
+                        @forelse($signatures as $signature)
+                            <option value="{{$signature->id}}">{{$signature->signature_title}}</option>
+                        @empty
+                            <option>Списков нет</option>
+                        @endforelse
+                    </select>
+
+                    @error('signature')
+                    <div class="text-sm text-red-500">{{$message}}</div>
+                    @enderror
+
+                    <div class="text-sm mt-2"><a class="text-green-600 underline" href="/templates/create">Создать новый
+                            шаблон</a></div>
+                </div>
 
                 <div class="py-3 bg-gray-50 text-right mt-6">
                     <button type="submit"
@@ -50,7 +79,9 @@
                         Отправить
                     </button>
                 </div>
+
             </div>
+
 
         </form>
     </div>

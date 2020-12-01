@@ -48,16 +48,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7233373-f6a0-4285-a71f-2b2be67b2b2b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Mail/SendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SendMail.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/components/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/emails/TestMail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/TestMail.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/emails/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/emails/templates/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/templates/edit.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -203,7 +202,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606716093255</updated>
       <workItem from="1606716094303" duration="28967000" />
-      <workItem from="1606802814785" duration="16480000" />
+      <workItem from="1606802814785" duration="27026000" />
     </task>
     <servers />
   </component>
@@ -223,17 +222,17 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2613" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606717487155">
+    <state x="2613" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1606822268954">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2613" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606717487155" />
+    <state x="2613" y="298" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606822268954" />
     <state width="600" height="428" key="javadoc.popup" timestamp="1606814208092">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606814208092" />
-    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1606820587393">
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1606827068532">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606820587393" />
+    <state x="2543" y="239" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1606827068532" />
   </component>
 </project>

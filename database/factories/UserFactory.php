@@ -99,3 +99,11 @@ $factory->define(MessageTemplate::class, function (Faker $faker){
         'body'=>$faker->sentence(50)
     ];
 });
+
+$factory->define(\App\Signature::class, function (Faker $faker){
+    return [
+        'signature_title'=>$faker->sentence(3),
+        'name'=>$faker->name(),
+        'position'=>$faker->sentence(2)
+    ];
+});

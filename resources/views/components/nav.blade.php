@@ -10,7 +10,9 @@
             <li>
                 <a href="/lists">Адресная книга</a>
                 <a href="/templates">Шаблоны писем</a>
+                <a href="/signatures">Мои подписи</a>
                 <a href="/send">Сделать рассылку</a>
+
 {{--            <li><a href="#">Разделы</a>--}}
 {{--                <ul class="submenu-left">--}}
 {{--                    @foreach($channels as $channel)--}}

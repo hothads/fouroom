@@ -51,6 +51,11 @@ class User extends Authenticatable implements MustVerifyEmail
       return $this->hasMany(MessageTemplate::class);
     }
 
+    public function signatures()
+    {
+        return $this->hasMany(Signature::class);
+    }
+
     public function emaillists(){
         return $this->hasMany(EmailList::class);
     }
@@ -101,6 +106,11 @@ class User extends Authenticatable implements MustVerifyEmail
     public function addTemplate($attributes)
     {
         $this->messageTemplates()->create($attributes);
+    }
+
+    public function addSignature($attributes)
+    {
+        $this->signatures()->create($attributes);
     }
 
 

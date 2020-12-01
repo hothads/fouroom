@@ -4,7 +4,12 @@
 
     <div class="container mx-auto my-6">
 
-        <form class="flex" method="POST" action="/templates/{{$template->id}}">
+        <form id="deleteForm" class="flex" action="{{$template->path()}}" method="POST">
+            @csrf
+            @method('DELETE')
+        </form>
+
+        <form id="updateForm" class="flex" method="POST" action="/templates/{{$template->id}}">
             @csrf
             @method('PATCH')
 
@@ -78,22 +83,15 @@
                 @error('body')
                 <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
-
-
-                <div class="flex justify-between items-center mt-3">
-                    <div class="py-3 bg-gray-50 text-right">
-                        <button type="submit" class="button-blue">Обновить</button>
-                    </div>
-
-                    <form class="flex" action="{{$template->path()}}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="button-red">Удалить</button>
-                    </form>
-                </div>
             </div>
 
         </form>
+
+        <div class="flex justify-between mt-6">
+            <button type="submit" class="button-blue" form="updateForm">Обновить</button>
+            <button type="submit" class="button-red" form="deleteForm">Удалить</button>
+        </div>
+
     </div>
 
 @endsection

@@ -104,3 +104,11 @@ Route::post('/templates', 'MessageTemplateController@store');
 Route::get('/templates/{template}', 'MessageTemplateController@edit');
 Route::patch('/templates/{template}', 'MessageTemplateController@update');
 Route::delete('/templates/{template}', 'MessageTemplateController@destroy');
+
+
+Route::get('/signatures', 'SignatureController@index');
+Route::get('/signatures/create', 'SignatureController@create');
+Route::post('/signatures', 'SignatureController@store');
+Route::get('/signatures/{signature}', 'SignatureController@edit');
+Route::patch('/signatures/{signature}', 'SignatureController@update');
+Route::delete('/signatures/{signature}', 'SignatureController@destroy');
