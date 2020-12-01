@@ -46,6 +46,15 @@ class User extends Authenticatable implements MustVerifyEmail
         return 'name'; //user name
     }
 
+    public function messageTemplates()
+    {
+      return $this->hasMany(MessageTemplate::class);
+    }
+
+    public function emaillists(){
+        return $this->hasMany(EmailList::class);
+    }
+
     public function threads()
     {
         return $this->hasMany(Thread::class)->latest();
@@ -89,8 +98,11 @@ class User extends Authenticatable implements MustVerifyEmail
         return '/profiles/' . $this->name;
     }
 
-    public function emaillists(){
-        return $this->hasMany(EmailList::class);
+    public function addTemplate($attributes)
+    {
+        $this->messageTemplates()->create($attributes);
     }
+
+
 
 }

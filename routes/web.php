@@ -97,3 +97,10 @@ Route::delete('/lists/{list}/emails/{email}', 'EmailsController@destroy');
 
 
 Route::post('/lists/{list}/emails/import', 'EmailsController@importExcel');
+
+Route::get('/templates', 'MessageTemplateController@index');
+Route::get('/templates/create', 'MessageTemplateController@create');
+Route::post('/templates', 'MessageTemplateController@store');
+Route::get('/templates/{template}', 'MessageTemplateController@edit');
+Route::patch('/templates/{template}', 'MessageTemplateController@update');
+Route::delete('/templates/{template}', 'MessageTemplateController@destroy');

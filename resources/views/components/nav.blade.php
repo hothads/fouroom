@@ -7,9 +7,10 @@
 
     <div class="flex w-full justify-between">
         <ul class="topmenu">
-            <li><a href="/emails">Главная</a>
-                <a href="/lists">Адреса</a>
-                <a href="/send">Рассылка</a>
+            <li>
+                <a href="/lists">Адресная книга</a>
+                <a href="/templates">Шаблоны писем</a>
+                <a href="/send">Сделать рассылку</a>
 {{--            <li><a href="#">Разделы</a>--}}
 {{--                <ul class="submenu-left">--}}
 {{--                    @foreach($channels as $channel)--}}

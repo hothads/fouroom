@@ -13,6 +13,7 @@ class SendMail extends Mailable
 
     public $details;
 
+
     /**
      * Create a new message instance.
      *
@@ -30,6 +31,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Test mail from ixi')->view('emails.TestMail');
+        return $this->from('ixiinit@gmail.com')->subject('from GMC')->view('emails.TestMail');
     }
 }

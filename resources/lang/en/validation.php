@@ -136,9 +136,15 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+
         'email' => [
             'email' => 'Не соответствует формау email адреса'
-        ]
+        ],
+
+//        'template_title' => [
+//            'required' => 'Поле :attribute не заполнено'
+//        ]
+
     ],
 
     /*
@@ -155,7 +161,10 @@ return [
     'attributes' => [
         'body'=>'текст',
         'title'=>'заголовок',
-        'password'=>'пароль'
+        'password'=>'пароль',
+        'template_title'=>'название шаблона',
+        'from'=>'от кого',
+        'theme'=>'тема сообщения'
     ],
 
 ];

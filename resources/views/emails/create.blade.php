@@ -9,11 +9,12 @@
 
             <div class="w-1/3 mr-24">
 
-                <label for="country" class="block text-sm font-medium text-gray-700">Адреса получателей</label>
+                <label for="country" class="block text-sm font-medium text-gray-700 mt-6">Адреса получателей</label>
 
                 <select name="lists"
                     class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                   @forelse($lists as $list)
+                    <option>Выберите получателей</option>
+                    @forelse($lists as $list)
                         <option value="{{$list->id}}">{{$list->title}}</option>
                     @empty
                         <option>Списков нет</option>
@@ -28,8 +29,7 @@
 
             <div class="w-2/3 flex flex-col">
 
-
-                <label class="block text-sm font-medium text-gray-700">
+                <label class="block text-sm font-medium text-gray-700 mt-6">
                     Кому
                 </label>
 
@@ -41,34 +41,6 @@
                     placeholder="Введите адрес получателя"></textarea>
 
                 @error('emails')
-                <div class="text-sm text-red-500">{{$message}}</div>
-                @enderror
-
-
-                <label class="block text-sm font-medium text-gray-700 mt-6">
-                    Текст заголовка
-                </label>
-
-                <input
-                    class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    type="text"
-                    name="title"
-                    placeholder="Введите текст заголовка">
-                @error('title')
-                <div class="text-sm text-red-500">{{$message}}</div>
-                @enderror
-
-                <label class="block text-sm font-medium text-gray-700 mt-6">
-
-                    Текст сообщения
-
-                </label>
-
-                <textarea name="body" rows="3"
-                          class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                          placeholder="Введите текст сообщения"></textarea>
-
-                @error('body')
                 <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
 

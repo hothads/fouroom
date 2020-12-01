@@ -19,16 +19,12 @@ class MailController extends Controller
 
     public function store()
     {
-        request()->validate([
-            'title' => 'required|max:255',
-            'body' => 'required',
-        ]);
 
         $recipients = [];
 
         $details = [
-            'title' => request()->title,
-            'body' => request()->body,
+            'title' => 'title',
+            'body' => 'message text',
         ];
 
         if (request()->lists)
@@ -52,8 +48,18 @@ class MailController extends Controller
                 continue;
             } else {
                 Mail::to($recipient)->send(new SendMail($details));
+                if(env('MAIL_HOST', false)=='smtp.mailtrap.io'){
+                    sleep(1); // I should do something instead
+                }
             }
         }
-        return 'email sent';
+
+        if(request()->emails == 0 && request()->lists == 0)
+        {
+            return back()->with('flash', 'Вы не выбрали получателей');
+        } else {
+            return back()->with('flash', 'Письма отправлены');
+        }
+
     }
 }

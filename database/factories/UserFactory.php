@@ -7,6 +7,7 @@ use App\User;
 use App\Thread;
 use App\Reply;
 use App\Channel;
+use App\MessageTemplate;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
@@ -85,5 +86,16 @@ $factory->define(Emails::class, function (Faker $faker){
         'user_name'=> $faker->name,
         'organisation'=>$faker->sentence(5),
         'source'=>$faker->sentence(3)
+    ];
+});
+
+
+$factory->define(MessageTemplate::class, function (Faker $faker){
+    return [
+        'template_title'=>$faker->sentence(3),
+        'from' => $faker->email,
+        'title'=> $faker->sentence(4),
+        'theme'=>$faker->sentence(5),
+        'body'=>$faker->sentence(50)
     ];
 });
