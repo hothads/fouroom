@@ -4,6 +4,9 @@
 
     <div class="container mx-auto my-6">
 
+
+    <h1 class="mb-6 text-xl ">Редактирование подписи</h1>
+
         <form id="deleteForm" action="{{$signature->path()}}" method="POST">
             @csrf
             @method('DELETE')
@@ -68,7 +71,10 @@
         </form>
 
         <div class="flex justify-between mt-6">
-            <button type="submit" class="button-blue" form="updateForm">Обновить</button>
+            <div>
+                <button type="submit" class="button-blue" form="updateForm">Обновить</button>
+                <button onclick="location.href='/signatures'" class="button-black">Отменить</button>
+            </div>
             <button type="submit" class="button-red" form="deleteForm">Удалить</button>
         </div>
     </div>

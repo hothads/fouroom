@@ -37,6 +37,8 @@ class EmailListController extends Controller
         return redirect("/lists/$list->id/emails/create");
     }
 
+
+
     public function destroy(EmailList $list) {
         if(auth()->user()->id === $list->owner->id)
         {

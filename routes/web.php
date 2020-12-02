@@ -84,6 +84,8 @@ Route::post('/send', 'MailController@store');
 Route::get('/emails/{emails}', 'EmailsController@edit');
 Route::patch('/emails/{emails}', 'EmailsController@update');
 
+Route::get('/unsubscribe/{email}', 'EmailsController@unsubscribe');
+
 
 Route::get('/lists', 'EmailListController@index');
 Route::get('/lists/create', 'EmailListController@create')->middleware('auth');

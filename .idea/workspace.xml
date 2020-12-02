@@ -49,15 +49,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d7233373-f6a0-4285-a71f-2b2be67b2b2b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MailController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/SendMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/SendMail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/UserFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/UserFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/nav.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/emails/TestMail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/TestMail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/emails/templates/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/emails/templates/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +194,7 @@
       <option name="presentableId" value="Default" />
       <updated>1606716093255</updated>
       <workItem from="1606716094303" duration="28967000" />
-      <workItem from="1606802814785" duration="27026000" />
+      <workItem from="1606802814785" duration="29224000" />
     </task>
     <servers />
   </component>

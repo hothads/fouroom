@@ -46,33 +46,40 @@ class User extends Authenticatable implements MustVerifyEmail
         return 'name'; //user name
     }
 
+
     public function messageTemplates()
     {
       return $this->hasMany(MessageTemplate::class);
     }
+
 
     public function signatures()
     {
         return $this->hasMany(Signature::class);
     }
 
+
     public function emaillists(){
         return $this->hasMany(EmailList::class);
     }
+
 
     public function threads()
     {
         return $this->hasMany(Thread::class)->latest();
     }
 
+
     public function activity(){
         return $this->hasMany(Activity::class);
     }
+
 
     public function visitedThreadCacheKey($thread)
     {
         return sprintf("users.%s.visits.%s", $this->id, $thread->id);
     }
+
 
     public function read($thread)
     {
@@ -83,30 +90,36 @@ class User extends Authenticatable implements MustVerifyEmail
         );
     }
 
+
     public function lastReply()
     {
         // in this case hase one will retun the last created reply
         return $this->hasOne(Reply::class)->latest();
     }
 
+
     public function getAvatarPathAttribute($avatar)
     {
         return $avatar ?:'avatars/default.jpg';
     }
+
 
     public function isAdmin()
     {
         return in_array($this->name, ['Mihail', 'santa']);
     }
 
+
     public function profilePath() {
         return '/profiles/' . $this->name;
     }
+
 
     public function addTemplate($attributes)
     {
         $this->messageTemplates()->create($attributes);
     }
+    
 
     public function addSignature($attributes)
     {

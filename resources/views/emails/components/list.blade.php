@@ -42,9 +42,9 @@
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap">
-                <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                  Активна
-                </span>
+
+                            {!!$email->active ? '<div class="text-green-500">есть</div>' : 'нет'!!}
+
                             </td>
 
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">

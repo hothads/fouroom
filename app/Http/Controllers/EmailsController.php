@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Str;
 use App\Emails;
 use App\EmailList;
 use Illuminate\Http\Request;
@@ -38,6 +39,8 @@ class EmailsController extends Controller
             'source' => ''
         ]);
 
+        $attributes['token'] = Str::random(10);
+
         $list->addEmail($attributes);
 
         return back();
@@ -56,6 +59,16 @@ class EmailsController extends Controller
         $emails->update($attributes);
 
         return back();
+    }
+
+    public function unsubscribe(Emails $email) {
+        
+        if (request('token') == $email->token){
+            $email->update(['active' => false]);
+            return view('emails.unsubscribe');
+        } else {
+            abort(403);
+        }
     }
 
     public function destroy(EmailList $list, Emails $email)
@@ -105,6 +118,7 @@ class EmailsController extends Controller
                         continue;
                     } else {
                         $list->addEmail([
+                            'token' => Str::random(10),
                             'email' => $data['email'],
                             'user_name' => $data['user_name'],
                             'organisation' => $data['organisation'],

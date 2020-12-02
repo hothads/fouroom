@@ -7,6 +7,7 @@ use App\User;
 use App\Thread;
 use App\Reply;
 use App\Channel;
+use App\EmailList;
 use App\MessageTemplate;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
@@ -80,9 +81,19 @@ $factory->define(\Illuminate\Notifications\DatabaseNotification::class, function
 });
 
 
+$factory->define(EmailList::class, function (Faker $faker){
+    return [
+        'user_id'=> factory(User::class),
+        'title'=>$faker->sentence(2)
+    ];
+});
+
+
 $factory->define(Emails::class, function (Faker $faker){
     return [
+        'email_list_id'=> factory(EmailList::class),
         'email' => $faker->email,
+        'token' => Str::random(10),
         'user_name'=> $faker->name,
         'organisation'=>$faker->sentence(5),
         'source'=>$faker->sentence(3)

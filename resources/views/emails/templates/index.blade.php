@@ -5,10 +5,21 @@
 
         <h1 class="mb-6 text-xl ">Шаблоны писем</h1>
 
-        @forelse($templates as $template)
-            <span class="px-2 py-1 border border-gray-300 rounded mr-3"><a href="{{$template->path()}}">{{$template->template_title}}</a></span>
-        @empty
-            <a class="button-green" href="/templates/create">Создать новый шаблон</a>
-        @endforelse
+        <div class="mb-6 ">
+
+            @forelse($templates as $template)
+            
+            <a class="inline-block mr-3 px-2 py-1 mb-5 shadow rounded bg-white" href="{{$template->path()}}">{{$template->template_title}}</a>
+           
+            
+            @empty
+
+            Еще нет готовых шаблонов
+                
+            @endforelse
+
+        </div>
+
+        <a class="button-blue" href="/templates/create">Создать новый шаблон</a>
     </div>
 @endsection

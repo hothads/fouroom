@@ -34,6 +34,7 @@ class MailController extends Controller
             'signature' => 'required'
         ]);
 
+
         $list = EmailList::find($attributes['list']);
         $template = MessageTemplate::find($attributes['template']);
         $signature = Signature::find($attributes['signature']);
@@ -47,26 +48,29 @@ class MailController extends Controller
             'position' => $signature->position
         ];
 
-
-//        $emails = Emails::where('email_list_id', request()->lists)->get();
         foreach ($list->emails as $email) {
-            array_push($recipients, $email['email']);
+            if($email->active == false){
+                continue;
+            } else {
+                array_push($recipients, [
+                    'email' => $email['email'],
+                    'token' => $email['token'],
+                    'id'=>$email['id']
+                    ]);
+            }
+            
         }
 
-
-//
-//        if (request()->emails) {
-//            $emails = str_replace(' ', '', request()->emails);
-//            $clean_emails = explode(';', $emails);
-//            $recipients = array_merge($recipients, $clean_emails);
-//        }
+        // dd($recipients);
 
         foreach ($recipients as $recipient) {
 
             if ($recipient == '') {
                 continue;
             } else {
-                Mail::to($recipient)->send(new SendMail($details));
+                $details['token'] = $recipient['token'];
+                $details['id'] = $recipient['id'];
+                Mail::to($recipient['email'])->send(new SendMail($details));
                 if (env('MAIL_HOST', false) == 'smtp.mailtrap.io') {
                     sleep(1); // I should do something instead
                 }
