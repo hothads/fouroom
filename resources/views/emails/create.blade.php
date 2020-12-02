@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container mx-auto my-6">
+    <div class="container max-w-sm mx-auto my-6">
 
         <form class="flex" method="POST" action="/send">
             @csrf
@@ -73,9 +73,9 @@
                             шаблон</a></div>
                 </div>
 
-                <div class="py-3 bg-gray-50 text-right mt-6">
+                <div class="py-3 bg-gray-50 mt-6">
                     <button type="submit"
-                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            class="button-blue">
                         Отправить
                     </button>
                 </div>

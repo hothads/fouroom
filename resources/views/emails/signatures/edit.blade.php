@@ -4,7 +4,6 @@
 
     <div class="container mx-auto my-6">
 
-
     <h1 class="mb-6 text-xl ">Редактирование подписи</h1>
 
         <form id="deleteForm" action="{{$signature->path()}}" method="POST">
