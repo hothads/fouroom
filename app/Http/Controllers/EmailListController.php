@@ -8,6 +8,11 @@ use PharIo\Manifest\Email;
 
 class EmailListController extends Controller
 {
+    public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
     public function index()
     {
         $lists = EmailList::where('user_id', auth()->user()->id)->get();

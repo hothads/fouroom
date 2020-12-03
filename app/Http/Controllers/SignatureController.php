@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class SignatureController extends Controller
 {
+
+    public function __construct()
+	{
+		$this->middleware('auth');
+    }
+    
     public function index()
     {
         $signatures = auth()->user()->signatures;

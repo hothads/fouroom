@@ -12,6 +12,11 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class EmailsController extends Controller
 {
+    public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
     public function index()
     {
         $emails = Emails::all()->sortByDesc('created_at');
@@ -49,12 +54,15 @@ class EmailsController extends Controller
 
     public function update(Emails $emails)
     {
+
         $attributes = request()->validate([
             'email' => 'required|email',
             'user_name' => '',
             'organisation' => '',
-            'source' => ''
+            'source' => '',
         ]);
+
+        $attributes['active']= request()->has('active');
 
         $emails->update($attributes);
 

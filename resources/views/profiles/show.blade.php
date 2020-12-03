@@ -11,7 +11,7 @@
 
                 <div class="flex flex-col text-gray-700  leading-loose mx-5 text-lg">
                     <span class="font-bold">{{$user->name}}</span>
-                    <span><a class="text-point" href="/threads?by={{$user->name}}"> Все публикации</a></span>
+                    {{-- <span><a class="text-point" href="/threads?by={{$user->name}}"> Все публикации</a></span> --}}
                 </div>
 
                 {{--        <h1 class="text-2xl font-bold"> История активности </h1>--}}

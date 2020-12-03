@@ -88,7 +88,7 @@ Route::get('/unsubscribe/{email}', 'EmailsController@unsubscribe');
 
 
 Route::get('/lists', 'EmailListController@index');
-Route::get('/lists/create', 'EmailListController@create')->middleware('auth');
+Route::get('/lists/create', 'EmailListController@create');
 Route::post('/lists', 'EmailListController@store');
 Route::delete('/lists/{list}', 'EmailListController@destroy');
 

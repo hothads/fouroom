@@ -12,6 +12,11 @@ use Illuminate\Support\Facades\Mail;
 
 class MailController extends Controller
 {
+    public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
     public function create()
     {
         $user = auth()->user();

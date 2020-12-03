@@ -20,6 +20,13 @@
 
                 <label for="source">Источник</label>
                 <input value="{{$email->source}}" type="text" name="source">
+
+                <div class="flex items-center mt-6">
+                    <label class=" font-bold text-gray-700 text-sm mr-3" for="active">Подписка</label>
+                    <input type="checkbox" name="active" {{$email->active ? 'checked' : ''}}>
+                    {{-- <input type="checkbox" name="active" onChange="this.form.submit"> --}}
+                </div>
+    
                 <div class="flex justify-between">
                     <button class="button-blue mt-12" type="submit">Сохранить</button>
                     <a href="/lists/{{$email->emaillist->id}}/emails/create" class="button-black mt-12 cursor-pointer">Назад</a>

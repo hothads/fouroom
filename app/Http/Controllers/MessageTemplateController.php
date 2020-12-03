@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class MessageTemplateController extends Controller
 {
+    public function __construct()
+	{
+		$this->middleware('auth');
+	}
+
     public function index()
     {
         $templates = auth()->user()->messageTemplates;
