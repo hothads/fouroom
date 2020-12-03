@@ -46,6 +46,16 @@ class User extends Authenticatable implements MustVerifyEmail
         return 'name'; //user name
     }
 
+    public function sendlogs()
+    {
+        return $this->hasMany(SendLog::class);
+    }
+
+    public function addSendLog($details)
+    {
+        $this->sendlogs()->create($details);
+    }
+
 
     public function messageTemplates()
     {

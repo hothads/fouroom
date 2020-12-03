@@ -64,6 +64,18 @@ class EmailsController extends Controller
 
         $attributes['active']= request()->has('active');
 
+        if($attributes['active'] !== $emails->active)
+        {
+            auth()->user()->addSendLog([
+                'template_id'=> null,
+                'template_message'=> null,
+                'list_id'=>$emails->emaillist->id,
+                'list_title'=>$emails->emaillist->title,
+                'action' => $attributes['active'] == null ? 'Заблокировал пользователя' : 'Разблокировал пользователя',
+                'email'=>$emails->email
+            ]);
+        }
+
         $emails->update($attributes);
 
         return back();

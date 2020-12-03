@@ -118,3 +118,13 @@ $factory->define(\App\Signature::class, function (Faker $faker){
         'position'=>$faker->sentence(2)
     ];
 });
+
+$factory->define(\App\SendLog::class, function (Faker $faker){
+    return [
+        'user_id'=> factory(User::class),
+        'template_id'=>$template = factory(EmailList::class),
+        'template_message'=>$template->body,
+        'list_id'=> $list = factory(EmailList::class),
+        'list_title'=>$list->title
+    ];
+});

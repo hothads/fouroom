@@ -66,7 +66,12 @@ class MailController extends Controller
             
         }
 
-        // dd($recipients);
+        auth()->user()->addSendLog([
+            'template_id'=> $template->id,
+            'template_message'=>$template->body,
+            'list_id'=>$list->id,
+            'list_title'=>$list->title
+        ]);
 
         foreach ($recipients as $recipient) {
 
@@ -81,6 +86,8 @@ class MailController extends Controller
                 }
             }
         }
+
+        
 
         return back()->with('flash', 'Рассылка прошла успешно');
 
