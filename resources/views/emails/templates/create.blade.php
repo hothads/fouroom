@@ -4,7 +4,7 @@
 
     <div class="container mx-auto my-6">
 
-        <form class="flex" method="POST" action="/templates">
+        <form id="template" class="flex" method="POST" action="/templates">
             @csrf
 
            <div class="flex w-full flex-col">
@@ -82,17 +82,13 @@
                 @error('body')
                 <div class="text-sm text-red-500">{{$message}}</div>
                 @enderror
-
-
-                <div class="py-3 bg-gray-50 text-right mt-6">
-                    <button type="submit"
-                            class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                        Отправить
-                    </button>
-                </div>
             </div>
-
         </form>
+
+        <div class="py-3 bg-gray-50 text-right mt-6 flex justify-between">
+            <button form="template" type="submit" class="button-blue">Отправить</button>
+            <button onclick="location.href='/templates'" class="button-black">Отменить</button>
+        </div>
     </div>
 
 @endsection
