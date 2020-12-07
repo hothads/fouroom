@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
+use App\InviteKey;
 use App\Emails;
 use App\User;
 use App\Thread;
@@ -126,5 +127,13 @@ $factory->define(\App\SendLog::class, function (Faker $faker){
         'template_message'=>$template->body,
         'list_id'=> $list = factory(EmailList::class),
         'list_title'=>$list->title
+    ];
+});
+
+$factory->define(InviteKey::class, function (Faker $faker){
+    return [
+        'user_id'=> factory(User::class),
+        'email' => $faker->email,
+        'key'=>Str::random(10),
     ];
 });

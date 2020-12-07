@@ -14359,6 +14359,13 @@ video {
   margin-right: 0.5rem;
 }
 
+.form h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 0.75rem;
+}
+
 .forum-card, .is-best-reply {
   border-radius: 0.5rem;
   border-width: 2px;

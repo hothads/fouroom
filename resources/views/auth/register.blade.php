@@ -9,6 +9,22 @@
             <form class="auth_form" method="POST" action="{{ route('register') }}">
                 @csrf
 
+                <label for="key" >Ключ</label>
+
+                <input
+                    id="key"
+                    type="text"
+                    class="@error('key') is-invalid @enderror"
+                    name="key"
+                    value="{{ old('key') }}"
+                    required
+                    autocomplete="name"
+                    autofocus>
+
+                @error('key')
+                <span class="text-red-500 text-xs italic">{{ $message }}</span>
+                @enderror
+
                 <label for="name" >{{ __('Имя') }}</label>
 
                 <input

@@ -82,19 +82,20 @@ Route::post('/send', 'MailController@store');
 
 
 Route::get('/emails/{emails}', 'EmailsController@edit');
-Route::patch('/emails/{emails}', 'EmailsController@update');
+Route::patch('/emails/{emails}', 'EmailsController@update')->name('email.update');
 
 Route::get('/unsubscribe/{email}', 'EmailsController@unsubscribe');
 
 
 Route::get('/lists', 'EmailListController@index');
 Route::get('/lists/create', 'EmailListController@create');
-Route::post('/lists', 'EmailListController@store');
+Route::post('/lists', 'EmailListController@store')->name('list.store');
+Route::patch('/lists/{list}', 'EmailListController@update');
 Route::delete('/lists/{list}', 'EmailListController@destroy');
 
 
 Route::get('/lists/{list}/emails/create', 'EmailsController@create');
-Route::post('/lists/{list}/emails', 'EmailsController@store');
+Route::post('/lists/{list}/emails', 'EmailsController@store')->name('email.store');
 Route::delete('/lists/{list}/emails/{email}', 'EmailsController@destroy');
 
 

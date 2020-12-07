@@ -17,11 +17,6 @@ class EmailsController extends Controller
 		$this->middleware('auth');
 	}
 
-    public function index()
-    {
-        $emails = Emails::all()->sortByDesc('created_at');
-        return view('emails.index', compact('emails'));
-    }
 
     public function create(EmailList $list)
     {
@@ -31,12 +26,16 @@ class EmailsController extends Controller
 
     public function edit($emails)
     {
+        $this->authorize('update', $emails);
+
         return view('emails.show', ['email' => Emails::findOrFail($emails)]);
     }
 
 
     public function store(EmailList $list)
     {
+        $this->authorize('update', $list);
+
         $attributes = request()->validate([
             'email' => 'required|email',
             'user_name' => '',
@@ -49,11 +48,14 @@ class EmailsController extends Controller
         $list->addEmail($attributes);
 
         return back();
+        
     }
 
 
     public function update(Emails $emails)
     {
+
+        $this->authorize('update', $emails);
 
         $attributes = request()->validate([
             'email' => 'required|email',
@@ -93,15 +95,13 @@ class EmailsController extends Controller
 
     public function destroy(EmailList $list, Emails $email)
     {
-        if (auth()->user()->id == $list->owner->id) {
-            $email->delete();
-            return back();
 
-        } else {
+        $this->authorize('update', $email);
 
-            abort(403);
+        $email->delete();
 
-        }
+        return back();
+
     }
 
 

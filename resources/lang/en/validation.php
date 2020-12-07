@@ -141,6 +141,10 @@ return [
             'email' => 'Не соответствует формау email адреса'
         ],
 
+        'key' => [
+            'exists' => 'Ключ не подходит'
+        ]
+
 //        'template_title' => [
 //            'required' => 'Поле :attribute не заполнено'
 //        ]

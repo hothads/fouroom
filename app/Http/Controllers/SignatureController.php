@@ -28,11 +28,16 @@ class SignatureController extends Controller
 
     public function edit(Signature $signature)
     {
+        $this->authorize('update', $signature);
+
         return view('emails.signatures.edit', compact('signature'));
     }
 
     public function update(Signature $signature)
     {
+
+        $this->authorize('update', $signature);
+
         $attributes = request()->validate([
             'signature_title' => 'required',
             'name' => 'required',
@@ -59,6 +64,8 @@ class SignatureController extends Controller
 
     public function destroy(Signature $signature)
     {
+        $this->authorize('update', $signature);
+
         $signature->delete();
         return redirect('/signatures');
     }

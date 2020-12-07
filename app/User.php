@@ -56,6 +56,11 @@ class User extends Authenticatable implements MustVerifyEmail
         $this->sendlogs()->create($details);
     }
 
+    public function inviteKeys()
+    {
+        return $this->hasMany(InviteKey::class);
+    }
+
 
     public function messageTemplates()
     {
