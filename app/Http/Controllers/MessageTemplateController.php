@@ -38,7 +38,7 @@ class MessageTemplateController extends Controller
     {
         $attributes = request()->validate([
             'template_title' => 'required',
-            'from' => 'required|email',
+            // 'from' => 'required|email',
             'title' => 'required',
             'theme' => 'required',
             'body' => 'required',
@@ -53,7 +53,7 @@ class MessageTemplateController extends Controller
     {
        $attributes = request()->validate([
             'template_title' => 'required',
-            'from' => 'required|email',
+            // 'from' => 'required|email',
             'title' => 'required',
             'theme' => 'required',
             'body' => 'required',

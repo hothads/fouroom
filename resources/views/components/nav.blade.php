@@ -49,6 +49,9 @@
             <li class="cursor-pointer">{{ Auth::user()->name }}
                 <ul class="submenu-right">
                     <li><a href="{{ route('profile', auth()->user()) }}">Личный кабинет</a></li>
+@can('admin')
+                    <li><a href="/invite">Приглашение</a></li>
+@endcan
                     <li>
 
                         <a class="dropdown-item" href="{{ route('logout') }}"

@@ -20,7 +20,7 @@ Auth::routes(['verify' => true]);
 Route::view('scan', 'scan');
 
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@welcome');
+Route::get('/', 'MailController@create');
 Route::get('/threads','ThreadsController@index')->name('threads');
 Route::get('/threads/create', 'ThreadsController@create')->middleware('verified');
 Route::get('/threads/search','SearchController@show');

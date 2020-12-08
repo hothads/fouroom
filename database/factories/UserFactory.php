@@ -105,7 +105,7 @@ $factory->define(Emails::class, function (Faker $faker){
 $factory->define(MessageTemplate::class, function (Faker $faker){
     return [
         'template_title'=>$faker->sentence(3),
-        'from' => $faker->email,
+        // 'from' => $faker->email,
         'title'=> $faker->sentence(4),
         'theme'=>$faker->sentence(5),
         'body'=>$faker->sentence(50)

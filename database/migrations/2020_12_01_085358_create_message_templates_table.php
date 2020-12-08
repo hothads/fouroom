@@ -17,7 +17,7 @@ class CreateMessageTemplatesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('template_title');
-            $table->string('from');
+            // $table->string('from');
             $table->string('title');
             $table->string('theme');
             $table->text('body');

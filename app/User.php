@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Notifications\VerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Activity;
@@ -14,6 +15,10 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
+    public function sendEmailVerificationNotification()
+    {
+        $this->notify(new VerifyEmail); // my notification
+    }
     /**
      * The attributes that are mass assignable.
      *

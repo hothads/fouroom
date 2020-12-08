@@ -2,19 +2,22 @@
 
 @section('content')
 
-    <div class="container mx-auto pt-12 form">
+    <div class="flex pt-12 form  justify-center">
 
-        <h1>Пригласить нового пользователя</h1>
+        <div class="flex bg-white w-1/3 p-6 rounded shadow">
 
-        <form action="/invite" method="POST">
-            @csrf
-            
-            <label for="email">Адрес пользователя</label>
-            <input type="email" name="email" >
-    
-            <button type="submit">Отправить</button>
-        </form>
+            <h1>Пригласить нового пользователя</h1>
 
+            <form action="/invite" class="auth_form" method="POST">
+                @csrf
+                
+                <label for="email">Адрес пользователя</label>
+                <input class="mb-3" type="email" name="email" >
+        
+                <button class="button-blue" type="submit">Отправить</button>
+            </form>
+
+        </div>
     </div>
 
 @endsection

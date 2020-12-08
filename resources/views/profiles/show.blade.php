@@ -56,12 +56,12 @@
                 </div>
 
                 <div class="forum-body mb-12">
-                    <article>
-                        {{$log->template_message}}
-                    <div class="flex justify-between mt-3">
-                        <p><a href="/lists/{{$log->list_id}}/emails/create">Список рассылки</a></p>
-                        <p><a href="/templates/{{$log->template_id}}">Шаблон письма</a></p>
-                    </div>
+                    <article class="px-2 pt-4">
+                        {!!$log->template_message!!}
+                        <div class="flex justify-between mt-3">
+                            <p><a href="/lists/{{$log->list_id}}/emails/create">Список рассылки</a></p>
+                            <p><a href="/templates/{{$log->template_id}}">Шаблон письма</a></p>
+                        </div>
                     </article>
                 </div>
 

@@ -69,7 +69,7 @@
                     <div class="text-sm text-red-500">{{$message}}</div>
                     @enderror
 
-                    <div class="text-sm mt-2"><a class="text-green-600 underline" href="/templates/create">Создать новый
+                    <div class="text-sm mt-2"><a class="text-green-600 underline" href="/signatures/create">Создать новый
                             шаблон</a></div>
                 </div>
 
