@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -60,7 +61,6 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasMany(InviteKey::class);
     }
-
 
     public function messageTemplates()
     {
@@ -139,6 +139,12 @@ class User extends Authenticatable implements MustVerifyEmail
     public function addSignature($attributes)
     {
         $this->signatures()->create($attributes);
+    }
+
+    public function addKey($attributes)
+    {
+        $attributes['key'] = Str::random(10);
+        return $this->inviteKeys()->create($attributes);
     }
 
 

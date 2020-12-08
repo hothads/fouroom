@@ -87,7 +87,7 @@ class MailController extends Controller
             }
         }
 
-        
+        // return view('emails.TestMail');
 
         return back()->with('flash', 'Рассылка прошла успешно');
 

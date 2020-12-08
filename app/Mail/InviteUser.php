@@ -7,12 +7,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class SendMail extends Mailable
+class InviteUser extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $details;
-
 
     /**
      * Create a new message instance.
@@ -31,6 +30,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->subject($this->details['subject'])->view('emails.TestMail');
+        return $this->subject('Приглашение')->view('emails.InviteMail');
     }
 }

@@ -115,3 +115,6 @@ Route::post('/signatures', 'SignatureController@store');
 Route::get('/signatures/{signature}', 'SignatureController@edit');
 Route::patch('/signatures/{signature}', 'SignatureController@update');
 Route::delete('/signatures/{signature}', 'SignatureController@destroy');
+
+Route::get('/invite', 'InviteKeyController@create');
+Route::post('/invite', 'InviteKeyController@store');

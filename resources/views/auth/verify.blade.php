@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container mx-auto max-w-3xl">
         <div class="mt-12 bg-white p-6">
 
@@ -25,4 +26,5 @@
 
         </div>
     </div>
-@endsection
+    @endsection
+
